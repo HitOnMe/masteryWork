@@ -1,0 +1,32 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    
+}
+.container {
+    max-width: 1200px
+}
+.mwFeature.container{
+    max-width: 1000px
+}
+.mwFeature .tab-content{
+    position: relative
+}
+.feature__content, .feature__content2 {
+    position: absolute;
+    width: 50%;
+}
+.feature__content2{
+    right: 0
+}
+.feature__img, .feature__img2{
+    position: absolute;
+    width: 50%;
+    right:0;
+    top: 0
+}
+.feature__img2{
+    left:0
+}
+.feature__img img{
+    object-fit: cover
+}
