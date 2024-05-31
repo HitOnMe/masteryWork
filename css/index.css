@@ -1,32 +1,190 @@
 *, *::before, *::after{
     box-sizing: border-box;
-    
+    margin: 0;
+    padding: 0
+}
+body{
+    font-family: 'Nunito', sans-serif
+}
+img {
+    border-radius: 5px
+}
+.mwTitle{
+    width: 60%;
+    margin: auto;
+    text-align: center
+}
+.container, .container-fluid{
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 .container {
-    max-width: 1200px
+    max-width: 1200px;
+    margin: auto
 }
-.mwFeature.container{
-    max-width: 1000px
+
+.button__1, .button__2, .button__3{
+    text-transform:uppercase;
+    font-size: 1rem;
+    padding:12px 25px;
+    font-weight: 700;
+    transition: all .5s
 }
-.mwFeature .tab-content{
-    position: relative
+.button__1 {
+    color:#dc4f72;
+    border: 1px solid #dc4f72;
+    border-radius: 5px;
 }
-.feature__content, .feature__content2 {
+.button__1:hover{
+    background-color:#dc4f72;
+    color: white
+}
+p {   
+    margin: 18px 0 48px 0;
+}
+h1 {
+    font-size: 3.1rem;
+    line-height: 3.6rem;
+    font-weight: 700
+}
+h2 {
+    font-size: 2.9rem;
+    line-height: 1;
+    font-weight: 700
+}
+h3 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    font-weight: 700;
+    color:#dc4f72;
+    text-transform: uppercase;
+    margin-bottom: 5px
+}
+.header__fix {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999
+}
+header li{
+    padding: 0 10px
+}
+header .container{
+    line-height: 50px;
+    padding: 0;
+}
+
+header i, header span{
+    font-size: 1.6rem;
+    color: #dc4f72;
+    font-weight: 700
+}
+header i{
+    background-color: white
+}
+
+.mwAnchor{
+    position: relative;
+    justify-content: center;
+    padding-top: 170px;
+    overflow: hidden
+}
+.anchor__bg{
     position: absolute;
-    width: 50%;
+    width:100%;
+    height:100%;
+    background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/banner.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    z-index: -1
 }
-.feature__content2{
-    right: 0
-}
-.feature__img, .feature__img2{
+.anchor__bg::after{
+    content:'';
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    height: 100%;
+    top:0;
     position: absolute;
-    width: 50%;
-    right:0;
-    top: 0
+    z-index: 0
 }
-.feature__img2{
-    left:0
+.mwAnchor p{
+    font-size: 1.3rem;
+    font-weight: 400;
 }
-.feature__img img{
-    object-fit: cover
+.mwAnchor .container{
+    align-items: center;
+    padding:0
+}
+.mwCarousel{
+    position: relative;
+    display:flex;
+    min-height: 480px;
+    justify-content: center;
+    color: white
+}
+.carousel__bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/bg.jpg");
+    background-position: center;
+    background-attachment:fixed;
+    background-size:cover;
+    color: white;
+    z-index: -1
+}
+.carousel__bg::after{
+    content:'';
+    position: absolute;
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.674) 10%, rgba(0, 0, 0, 0.532));
+    width: 100%;
+    height: 100%;
+    z-index: 0
+}
+.Carousel__content{
+    width: 47%;
+}
+.Carousel__content h2, .feature__content h2{
+    font-size: 2rem
+}
+.specific .row{
+    justify-content:space-around
+}
+.specific img{
+    width: unset
+}
+.specific__2{
+    padding: 48px 32px;
+    background-color:#f7f9fc
+}
+.intro__content {
+    padding: 0 48px 0 15px;
+}
+.intro__img{
+    background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/about.jpg");
+    background-size: cover;
+    border-radius: 5px;
+}
+.number__content{
+    padding: 2rem;
+    box-shadow:1px 5px 7.5px rgba(14, 13, 13, 0.2)
+}
+.faq__title{
+    width: 60%;
+    margin: auto
+}
+.mwFeature .tab-content>.active{
+    display: flex;
+    justify-content:space-between
+}
+.mwFeedback__img {
+    width: 10%;
+}
+.mwFeedback img{
+    border-radius: 50%
 }
