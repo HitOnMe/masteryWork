@@ -9,6 +9,32 @@ body{
 img {
     border-radius: 5px
 }
+a{
+    text-decoration: none;
+    color: #656f7b
+}
+p {   
+    color: #656f7b;
+    margin: 18px 0 48px 0;
+}
+h1 {
+    font-size: 3.1rem;
+    line-height: 3.6rem;
+    font-weight: 700
+}
+h2 {
+    font-size: 2.9rem;
+    line-height: 1;
+    font-weight: 700
+}
+h3 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    font-weight: 700;
+    color:#dc4f72;
+    text-transform: uppercase;
+    margin-bottom: 5px
+}
 .mwTitle{
     width: 60%;
     margin: auto;
@@ -39,27 +65,7 @@ img {
     background-color:#dc4f72;
     color: white
 }
-p {   
-    margin: 18px 0 48px 0;
-}
-h1 {
-    font-size: 3.1rem;
-    line-height: 3.6rem;
-    font-weight: 700
-}
-h2 {
-    font-size: 2.9rem;
-    line-height: 1;
-    font-weight: 700
-}
-h3 {
-    font-size: 1rem;
-    line-height: 1.3rem;
-    font-weight: 700;
-    color:#dc4f72;
-    text-transform: uppercase;
-    margin-bottom: 5px
-}
+
 .header__fix {
     background-color: white;
     position: fixed;
@@ -126,6 +132,9 @@ header i{
     justify-content: center;
     color: white
 }
+.mwCarousel p{
+    color: white
+}
 .carousel__bg{
     position: absolute;
     width: 100%;
@@ -187,4 +196,14 @@ header i{
 }
 .mwFeedback img{
     border-radius: 50%
+}
+.copy__right .container{
+    display: flex;
+    justify-content:space-between
+}
+.copy__right a{
+    padding: 0 10px
+}
+.copy__right span{
+    font-weight: bold
 }
