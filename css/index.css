@@ -15,7 +15,7 @@ a{
 }
 p {   
     color: #656f7b;
-    margin: 18px 0 48px 0;
+    margin: 16px 0 16px;
 }
 h1 {
     font-size: 3.1rem;
@@ -28,12 +28,18 @@ h2 {
     font-weight: 700
 }
 h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.3rem;
     font-weight: 700;
     color:#dc4f72;
     text-transform: uppercase;
     margin-bottom: 5px
+}
+h4 {
+    font-size: 1.1rem;
+    line-height: 25px;
+    margin-bottom: 30px;
+    font-weight: 500
 }
 .mwTitle{
     width: 60%;
@@ -54,7 +60,8 @@ h3 {
     font-size: 1rem;
     padding:12px 25px;
     font-weight: 700;
-    transition: all .5s
+    transition: all .5s;
+    padding: 12px 20px;
 }
 .button__1 {
     color:#dc4f72;
@@ -65,7 +72,22 @@ h3 {
     background-color:#dc4f72;
     color: white
 }
-
+.bg__fixed{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-attachment:fixed;
+    background-position: center;
+    z-index: -1
+}
+.bg__fixed::after{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0
+}
 .header__fix {
     background-color: white;
     position: fixed;
@@ -95,27 +117,17 @@ header i{
 .mwAnchor{
     position: relative;
     justify-content: center;
-    padding-top: 170px;
+    padding-top: 100px;
+    margin-top: 70px;
     overflow: hidden
 }
 .anchor__bg{
-    position: absolute;
-    width:100%;
-    height:100%;
+    top:0;
+    left:0;
     background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/banner.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-size:cover;
-    z-index: -1
 }
 .anchor__bg::after{
-    content:'';
     background-color: rgba(255, 255, 255, 0.95);
-    width: 100%;
-    height: 100%;
-    top:0;
-    position: absolute;
-    z-index: 0
 }
 .mwAnchor p{
     font-size: 1.3rem;
@@ -136,30 +148,79 @@ header i{
     color: white
 }
 .carousel__bg{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
     background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/bg.jpg");
-    background-position: center;
-    background-attachment:fixed;
-    background-size:cover;
     color: white;
-    z-index: -1
 }
 .carousel__bg::after{
-    content:'';
-    position: absolute;
     background-image: linear-gradient(to right,rgba(0, 0, 0, 0.674) 10%, rgba(0, 0, 0, 0.532));
-    width: 100%;
-    height: 100%;
-    z-index: 0
 }
 .Carousel__content{
     width: 47%;
 }
 .Carousel__content h2, .feature__content h2{
-    font-size: 2rem
+    font-size: 1.9rem
+}
+.Carousel__content p{
+    margin: 24px 0 48px
+}
+.mwFeedback {
+    position: relative;
+}
+
+.feedback__bg {
+    background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b2.jpg");
+}
+.feedback__bg::after{
+    background-color: rgba(255, 255, 255, 0.774);
+}
+.owl-item .card .col-md-4{
+    width: 100px;
+    height: 100px;
+    overflow:hidden;
+    border: 3px solid #dc4f72;
+    border-radius: 50%;
+}
+.owl-prev span, .owl-next span{
+    display: none
+}
+.owl-theme .owl-dots .owl-dot span{
+    visibility: hidden;
+    width: 40px;
+    height: 5px;
+    border-radius: 0;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #dc4f72;
+    visibility:visible;
+}
+
+.card-body{
+    display: flex;
+    justify-content:space-between;
+    padding: 32px;
+    margin: 24px 1vh 0;
+}
+.card-text {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    position:relative;
+    color:black;
+    margin: 0
+}
+.card-text i{
+    position: absolute;
+    left: -3rem;
+    top: -5px;
+    font-size: 2.5rem;
+    color: #c7ccd1
+}
+.card-title {
+    color:#dc4f72;
+    padding-top: 20px;
+    margin-bottom: 0
+}
+.card.item{
+    border:none
 }
 .specific .row{
     justify-content:space-around
@@ -183,13 +244,45 @@ header i{
     padding: 2rem;
     box-shadow:1px 5px 7.5px rgba(14, 13, 13, 0.2)
 }
+.number__content h1{
+    color: red
+}
 .faq__title{
     width: 60%;
     margin: auto
 }
+.mwFeature ul.nav-pills {
+    justify-content:center
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link, .nav-pills .nav-link {
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 15px;
+    cursor: pointer;
+    float: left;
+    text-align:center;
+    border-bottom: 3px solid #c7ccd1;
+    border-radius: 0;
+    transition: none
+}
+.nav-pills .nav-link.active{
+    color:#dc4f72;
+    border-color:#dc4f72
+}
+.mwFeature .container-2{
+    max-width: 950px;
+    margin:auto
+}
 .mwFeature .tab-content>.active{
     display: flex;
-    justify-content:space-between
+    justify-content:space-between;
+    padding: 15px;
+    margin: 20px 0
+}
+.feature__img{
+    border-radius: 5%
 }
 .mwFeedback__img {
     width: 10%;
@@ -197,13 +290,68 @@ header i{
 .mwFeedback img{
     border-radius: 50%
 }
-.copy__right .container{
+.mwFeedback button.owl-dot{
+    color: red;
+}
+footer{
+    background-color:#f7f9fc
+}
+.foot__form {
+    padding: 32px;
+    box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
+    border-radius: 5px
+}
+.foot__email {
+    padding: 12px 20px;
+    outline:none;
+    border:none;
+    width: 78%
+}
+footer h3 a{
+    color: black;
+    text-transform:capitalize
+}
+footer h3{
+    margin-bottom: 30px
+}
+footer button{
+    width: 20%
+}
+footer .row{
+    justify-content: space-between;
+}
+.footer__form{
+    padding: 0 15px 0 48px
+}
+.footer__form p{
+    margin-bottom: 0
+}
+.copy__right{
     display: flex;
-    justify-content:space-between
+    position: relative;
+    justify-content:space-between;
+    padding-top: 24px;
+    margin-top: 48px
+}
+.copy__right::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #e7eaec85;
 }
 .copy__right a{
-    padding: 0 10px
+    padding: 0 10px;
+    
 }
-.copy__right span{
+.social span{
+    color:black;
     font-weight: bold
+}
+.w3layout {
+    transition: all .5s
+}
+.w3layout:hover{
+    color: red
 }
