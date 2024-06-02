@@ -43,7 +43,7 @@ h4 {
 }
 .mwTitle{
     width: 60%;
-    margin: auto;
+    margin: 50px auto;
     text-align: center
 }
 .container, .container-fluid{
@@ -113,7 +113,26 @@ header i, header span{
 header i{
     background-color: white
 }
-
+.mw__nav {
+    position: relative;
+}
+.mw__nav::after{
+    content:'';
+    position:absolute;
+    display:block;
+    left:18px;
+    bottom:30%;
+    width: 0;
+    height: 2px;
+    background-color:#dc4f72;
+    transition: all .5s;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show, a.nav-link:hover{
+    color:#dc4f72
+}
+.mw__nav:hover::after{
+    width:20%;
+}
 .mwAnchor{
     position: relative;
     justify-content: center;
@@ -147,6 +166,7 @@ header i{
 .mwCarousel p{
     color: white
 }
+
 .carousel__bg{
     background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/bg.jpg");
     color: white;
@@ -166,7 +186,9 @@ header i{
 .mwFeedback {
     position: relative;
 }
-
+.card{
+    background-color:transparent
+}
 .feedback__bg {
     background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b2.jpg");
 }
@@ -199,6 +221,7 @@ header i{
     justify-content:space-between;
     padding: 32px;
     margin: 24px 1vh 0;
+    background-color: white
 }
 .card-text {
     font-size: 1.1rem;
@@ -228,9 +251,19 @@ header i{
 .specific img{
     width: unset
 }
+.specific__2 h3 {
+    margin: 16px 0;
+    color: black;
+    font-weight: 700
+}
 .specific__2{
     padding: 48px 32px;
-    background-color:#f7f9fc
+    background-color:#f7f9fc;
+    transition: all .5s
+}
+.specific__2:hover{
+    transform: translateY(-10px);
+    box-shadow: 1px 5px 7.5px #cccdce;
 }
 .intro__content {
     padding: 0 48px 0 15px;
@@ -239,17 +272,32 @@ header i{
     background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/about.jpg");
     background-size: cover;
     border-radius: 5px;
+    box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: all .5s
+}
+.intro__img:hover{
+    transform: translateY(-10px)
 }
 .number__content{
     padding: 2rem;
     box-shadow:1px 5px 7.5px rgba(14, 13, 13, 0.2)
 }
 .number__content h1{
-    color: red
+    color:#dc4f72
 }
 .faq__title{
     width: 60%;
     margin: auto
+}
+.faq .row .col-7 li{
+    position:relative
+}
+.faq .row .col-7 input[type=checkbox]{
+    position: absolute;
+
+}
+.faq img{
+    width: 100%
 }
 .mwFeature ul.nav-pills {
     justify-content:center
@@ -297,11 +345,14 @@ footer{
     background-color:#f7f9fc
 }
 .foot__form {
+    background-color: white;
     padding: 32px;
     box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
     border-radius: 5px
 }
 .foot__email {
+    background-color: #f7f9fc;
+    border-radius: 5px;
     padding: 12px 20px;
     outline:none;
     border:none;
@@ -355,3 +406,63 @@ footer .row{
 .w3layout:hover{
     color: red
 }
+.offcanvas, button.buy__action{
+    position: fixed!important;
+    right: 0!important;
+}
+.offcanvas{
+    width: 90px!important;
+    height: 320px!important;
+    top: 21%!important;
+    background-color: #0d1326!important;
+    border-radius: 8px 0 0 8px!important;
+    display: grid!important;
+    grid-template-rows: repeat(4, 1fr)!important;
+    text-align:center!important;
+    font-size: 1rem!important;
+    
+}
+.offcanvas a{
+    color:#9d9d9e!important;
+    font-weight: 700!important
+}
+.tip__line{
+    position: relative;
+}
+.tip__line::after{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left:0;
+    bottom:20%;
+    background-color:#8b8b8c85
+}
+button.buy__action {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 22%!important;
+    right: 1%!important;
+    background-color: #0d132678;
+    border: none;
+    color:#e6ebffdf;
+    z-index:9999;
+}
+.mwBacktoTop{
+    position: fixed;
+    width: 55px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    background-color:rgba(220, 79, 114, 0.7);
+    border-radius: 2px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    visibility: hidden
+}
+.cd-top--is-visible { 
+    visibility: visible;
+    opacity: 1;
+  }
