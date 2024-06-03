@@ -24,10 +24,11 @@
     />
     <!-- link animation -->
     <!-- link css -->
+
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <header class="header__fix">
+    <header class="header__fix" id="DarkModetext">
       <nav class="navbar navbar-expand-lg container row">
         <div class="col-4">
           <a class="navbar-brand" href="#">
@@ -94,7 +95,13 @@
                 </button>
               </li>
             </ul>
-            <i class="fa fa-moon"></i>
+            <div class="theme-switch-wrapper">
+              <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <div class="slider round"></div>
+            </label>
+           
+          </div>
           </div>
         </div>
       </nav>
@@ -182,19 +189,23 @@
         </div>
       </div>
     </section>
-    <section class="mwIntro container row">
-      <div class="col-6 intro__content">
-        <h3>ABOUT OUR COMPANY</h3>
-        <h2>The Best Choice For Your Successful Business!</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et est
-          repellendus illum harum quam nihil totam reprehenderit! Ut sed eveniet
-          quos! Asperiores officia, repudiandae similique reiciendis, ab est
-          magnam esse nesciunt ea fuga facere voluptatem.
-        </p>
-        <button class="btn btn-danger button__2">READ MORE</button>
+    <section class="mwIntro">
+      <div class="container row">
+        <div class="col-6 intro__content">
+          <h3>ABOUT OUR COMPANY</h3>
+          <h2>The Best Choice For Your Successful Business!</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et est
+            repellendus illum harum quam nihil totam reprehenderit! Ut sed eveniet
+            quos! Asperiores officia, repudiandae similique reiciendis, ab est
+            magnam esse nesciunt ea fuga facere voluptatem.
+          </p>
+          <button class="btn btn-danger button__2">READ MORE</button>
+        </div>
+        <div class="col-6 intro__img">
+          <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/about.jpg" alt="about">
+        </div>
       </div>
-      <div class="col-6 intro__img"></div>
     </section>
     <section class="mwNumber">
       <div class="container">
@@ -261,52 +272,51 @@
           </p>
         </div>
         <div class="row">
-          <div class="col-5"><img
-            src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/women.jpg"
-            alt="women"
-          /></div>
-          <ul class="col-7">
+          <div class="col-5">
+            <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/women.jpg" alt="women"/>
+          </div>
+          <ul class="faq__content col-7">
             <li>
-              <input type="checkbox" checked>
-              <div>
-              <h3>There are many passages but the majority?</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam provident fugit quod atque ipsam neque nostrum delectus, nobis error eligendi, natus maxime ab aperiam? Enim quidem neque tempora in sapiente </p>
-              </div>
+              <button onclick="myFunction(1)"><h4>There are many passages but the majority?</h4></button>
+              <div id="FAQ__1" class="faq__detail">
+                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+                </p>
+              </div> 
             </li>
             <li>
-              <input type="checkbox" checked>
-              <div>
-              <h3>There are many passages but the majority?</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam provident fugit quod atque ipsam neque nostrum delectus, nobis error eligendi, natus maxime ab aperiam? Enim quidem neque tempora in sapiente </p>
-              </div>
+              <button onclick="myFunction(2)"><h4>There are many passages but the majority?</h4></button>
+              <div id="FAQ__2">
+                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+                </p>
+              </div> 
             </li>
             <li>
-              <input type="checkbox" checked>
-              <div>
-              <h3>There are many passages but the majority?</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam provident fugit quod atque ipsam neque nostrum delectus, nobis error eligendi, natus maxime ab aperiam? Enim quidem neque tempora in sapiente </p>
-              </div>
+              <button onclick="myFunction(3)"><h4>There are many passages but the majority?</h4></button>
+              <div id="FAQ__3">
+                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+                </p>
+              </div> 
             </li>
             <li>
-              <input type="checkbox" checked>
-              <div>
-              <h3>There are many passages but the majority?</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam provident fugit quod atque ipsam neque nostrum delectus, nobis error eligendi, natus maxime ab aperiam? Enim quidem neque tempora in sapiente </p>
-              </div>
+              <button onclick="myFunction(4)"><h4>There are many passages but the majority?</h4></button>
+              <div id="FAQ__4">
+                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+                </p>
+              </div> 
             </li>
             <li>
-              <input type="checkbox" checked>
-              <div>
-              <h3>There are many passages but the majority?</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam provident fugit quod atque ipsam neque nostrum delectus, nobis error eligendi, natus maxime ab aperiam? Enim quidem neque tempora in sapiente </p>
-              </div>
+              <button onclick="myFunction(5)"><h4>There are many passages but the majority?</h4></button>
+              <div id="FAQ__5">
+                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+                </p>
+              </div> 
             </li>
             <li>
-              <input type="checkbox" checked>
-              <div>
-              <h3>There are many passages but the majority?</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam provident fugit quod atque ipsam neque nostrum delectus, nobis error eligendi, natus maxime ab aperiam? Enim quidem neque tempora in sapiente </p>
-              </div>
+              <button onclick="myFunction(6)"><h4>There are many passages but the majority?</h4></button>
+              <div id="FAQ__6">
+                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+                </p>
+              </div> 
             </li>
           </ul>
         </div>
@@ -453,8 +463,7 @@
           </p>
         </div>
         <div class="owl-carousel owl-theme" id="mwCarousel">
-          <div class="row">
-          <div class="card item mb-3 col-6">
+          <div class="card item mb-3 ">
             <div class="row g-0 card-body">
               <div class="col-md-4">
                 <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team3.jpg" class="img-fluid rounded-start" alt="...">
@@ -468,7 +477,7 @@
               </div>
             </div>         
           </div>
-          <div class="card item mb-3 col-6">
+          <div class="card item mb-3">
             <div class="row g-0 card-body">
               <div class="col-md-4">
                 <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team4.jpg" class="img-fluid rounded-start" alt="...">
@@ -482,9 +491,7 @@
               </div>
             </div>         
           </div>
-        </div>
-        <div class="row">
-          <div class="card item mb-3 col-6">
+          <div class="card item mb-3 ">
             <div class="row g-0 card-body">
               <div class="col-md-4">
                 <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team5.jpg" class="img-fluid rounded-start" alt="team5">
@@ -498,7 +505,7 @@
               </div>
             </div>         
           </div>
-          <div class="card item mb-3 col-6">
+          <div class="card item mb-3">
             <div class="row g-0 card-body">
               <div class="col-md-4">
                 <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team6.jpg" class="img-fluid rounded-start" alt="...">
@@ -512,7 +519,6 @@
               </div>
             </div>         
           </div>
-        </div>
       </div>
     </section>
     <section class="mwAction">
@@ -591,10 +597,10 @@
           </div>
         </div>
         <div class="copy__right">
-          <div>© 2024 Masterwork. All Rights Reserved | WordPress Theme by<span><a class="w3layout" href="#">W3Layouts.</a></span></div>
+          <p>© 2024 Masterwork. All Rights Reserved | WordPress Theme by<span><a class="w3layout" href="#">W3Layouts.</a></span></p>
           <div class="social">
             <a href="#"><span><i class="fab fa-facebook-f"></i></span></a>
-            <a href="#"><span>in</span></a>
+            <a href="#"><span><i class="fab fa-linkedin-in"></i></span></a>
             <a href="#"><span><i class="fab fa-twitter"></i></span></a>
             <a href="#"><span><i class="fab fa-google-plus-g"></i></span></a>
             <a href="#"><span><i class="fab fa-github"></i></span></a>
@@ -630,6 +636,7 @@
   <a href="#" class="mwBacktoTop cd-top text-replace js-cd-top">
     <i class="fa fa-angle-up"></i>
   </a>
+  
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -645,50 +652,6 @@
     <script src="./js/jquery.countup.min.js"></script>
     <script src="./js/backtoTop.js"></script>
     <script src="./js/backtoTop2.js"></script>
+    <script src="./js/main.js"></script>
     
-    <script>
-      const carousel = new bootstrap.Carousel("#myCarousel");
-    </script>
-    <script>
-      const myCarouselElement = document.querySelector("#myCarousel");
-      const carousel = new bootstrap.Carousel(myCarouselElement, {
-        interval: 2000,
-        touch: false,
-      });
-    </script>
-    <script>
-      $('.mwcounter').countUp()
-    </script>
-    <script>
-      $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        768:{
-            items:1,
-            nav:true
-        },
-        1500:{
-            items:2,
-            nav:true,
-            loop:false
-        }
-    }
-})
-    </script>
-    <script>
-      var rotated = false;
-document.getElementById('buy__option').onclick = function() {
-    var div = document.getElementById('buy__arrow'),
-        deg = rotated ? 0 : 180;
-    div.style.webkitTransform = 'rotate('+deg+'deg)'; 
-    div.style.mozTransform    = 'rotate('+deg+'deg)'; 
-    div.style.msTransform     = 'rotate('+deg+'deg)'; 
-    div.style.oTransform      = 'rotate('+deg+'deg)'; 
-    div.style.transform       = 'rotate('+deg+'deg)'; 
-    rotated = !rotated;
-}
-    </script>
-  </body>
-</html>
+   
