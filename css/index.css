@@ -14,63 +14,6 @@
     --bg-color: #131617;
     --heading-color: #eee;
 }
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-  
-    em {
-      margin-left: 10px;
-      font-size: 1rem;
-    }
-  }
-  .theme-switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
-  }
-  
-  .theme-switch input {
-    display:none;
-  }
-  
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-  }
-  
-  input:checked + .slider {
-    background-color: #66bb6a;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
 *, *::before, *::after{
     box-sizing: border-box;
     margin: 0;
@@ -120,8 +63,12 @@ img {
 .specific__2, .mwIntro, .mwNumber, .faq, footer, footer h3 a{
     background-color: var(--secondary-color)
 }
-header, .specific, .faq li, .mwFeature, .row.card-body, .mwAction {
+header, .specific, .specific__2:hover, .faq li, .mwFeature, .row.card-body, .mwAction,.header__fix {
     background-color: var(--bg-color)
+}
+
+h1, h2, h4, footer h3 a, span i, header .nav-link, .fa.fa-search, .specific__2 h3 {
+    color: var(--font--color)
 }
 
 p, a, i, p.card-text{
@@ -130,8 +77,31 @@ p, a, i, p.card-text{
 .text-body-secondary{
     color: var(--text--color)!important
 }
-h1, h2, h4, footer h3 a, span i {
-    color: var(--font--color)
+.theme-switch {
+    display: inline-block;
+    position: relative;
+}
+.theme-switch input {
+    display:none;
+}
+.theme-switch-wrapper i{
+    color:#131617
+}
+.switch__mode{
+    position: relative
+}
+.theme-switch-wrapper .sun {
+    color:white;
+    position: absolute;
+    top:0;
+    opacity: 0;
+}   
+.theme-switch-wrapper .sun.active{
+    opacity: 1
+}
+
+input .checkbox{
+    display: inline-block
 }
 .mwTitle{
     width: 60%;
@@ -139,8 +109,7 @@ h1, h2, h4, footer h3 a, span i {
     text-align: center
 }
 .container, .container-fluid{
-    padding-top: 48px;
-    padding-bottom: 48px;
+   padding: 48px 12px
 }
 .container {
     max-width: 1200px;
@@ -181,7 +150,7 @@ h1, h2, h4, footer h3 a, span i {
     z-index: 0
 }
 .header__fix {
-    background-color: var(--bg-color);
+   
     position: fixed;
     width: 100%;
     top: 0;
@@ -189,17 +158,21 @@ h1, h2, h4, footer h3 a, span i {
     left: 0;
     z-index: 999
 }
+header{
+    transition: all .5s;
+}
 header li{
     padding: 0 10px
 }
-header .nav-link{
-    color: var(--font--color)
-}
+
 header .container{
     line-height: 50px;
     padding: 0;
 }
-
+.head__button{
+    display:flex;
+    align-items:center
+}
 header i, header span{
     font-size: 1.6rem;
     color: #dc4f72;
@@ -207,6 +180,19 @@ header i, header span{
 }
 header i{
     background-color: var(--bg-color)
+}
+
+.fa.fa-search{
+    width:40px;
+    height: 40px;
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    line-height:40px;
+    text-align:center
+}
+.theme-switch-wrapper {
+    display:flex
 }
 .mw__nav {
     position: relative;
@@ -250,6 +236,7 @@ header i{
     display:flex;
     min-height: 480px;
     justify-content: center;
+    padding: 0
 }
 .mwCarousel p, .mwCarousel h2{
     color: white
@@ -336,18 +323,16 @@ header i{
 }
 .specific__2 h3 {
     margin: 16px 0;
-    color: var(--font--color);
+ 
     font-weight: 700
 }
 .specific__2{
     padding: 48px 32px;
-    background-color:var(--secondary-color);
     transition: all .5s
 }
 .specific__2:hover{
     transform: translateY(-10px);
     box-shadow: 1px 5px 7.5px #cccdce;
-    background-color:var(--bg-color)
 }
 
 .intro__content p {
@@ -373,9 +358,6 @@ header i{
     color:#dc4f72
 }
 
-.faq{
-    background-color:var(--secondary-color);
-}
 .faq button{    
     all: unset;
     cursor: pointer;

@@ -31,32 +31,40 @@ function myFunction(y) {
   }
   const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-  function switchTheme(e) {
-      if (e.target.checked) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-      }
-      else {
-          document.documentElement.setAttribute('data-theme', 'light');
-      }    
-  }
-  function switchTheme(e) {
-      if (e.target.checked) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark'); //add this
-      }
-      else {
-          document.documentElement.setAttribute('data-theme', 'light');
-          localStorage.setItem('theme', 'light'); //add this
-      }    
-  }
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
   
-  if (currentTheme) {
-      document.documentElement.setAttribute('data-theme', currentTheme);
-  
-      if (currentTheme === 'dark') {
-          toggleSwitch.checked = true;
-      }
-  }
+let moon = document.querySelector('.moon')
+let sun = document.querySelector('.sun')
+function switchTheme(e) {
+    
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); 
+        moon.classList.remove('active')
+        sun.classList.add('active')
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+        moon.classList.add('active')
+        sun.classList.remove('active')
+    }    
+}
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
-  toggleSwitch.addEventListener('change', switchTheme, false);
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme)
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+        sun.classList.add('active')       
+    } else{
+    sun.classList.remove('active')
+    }
+
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+ 
+  

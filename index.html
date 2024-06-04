@@ -24,7 +24,8 @@
     />
     <!-- link animation -->
     <!-- link css -->
-
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/moon.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/sun.css' rel='stylesheet'>
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
@@ -82,11 +83,11 @@
                 <a class="nav-link" href="#">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="fa fa-search"></i>
+                <a class="nav-link search" href="#">
+                  <span class="fa fa-search"></span>
                 </a>
               </li>
-              <li>
+              <li class="head__button">
                 <button
                   type="button"
                   class="btn nav-item btn-outline-dark button__1"
@@ -95,12 +96,13 @@
                 </button>
               </li>
             </ul>
-            <div class="theme-switch-wrapper">
-              <label class="theme-switch" for="checkbox">
-                  <input type="checkbox" id="checkbox" />
-                  <div class="slider round"></div>
-            </label>
-           
+              <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                  <input  type="checkbox" id="checkbox"/>
+                    <i class="gg-moon moon active"></i>
+                    <i class="gg-sun sun active"></i>
+                </label>
+              </div>
           </div>
           </div>
         </div>
