@@ -29,15 +29,19 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <header class="header__fix" id="DarkModetext">
-      <nav class="navbar navbar-expand-lg container row">
-        <div class="col-4">
-          <a class="navbar-brand" href="#">
-            <i class="fa fa-handshake"></i>
-            <span>Masterwork</span>
-          </a>
-        </div>
-        <div class="col-8">
+    <header class="header__fix" id="header__fixed">
+      <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="#">
+              <i class="fa-regular fa-handshake"></i>
+              <span>Masterwork</span>
+            </a>
+
+          <label class="theme-switch-wrapper theme-switch" for="checkbox">
+            <input  type="checkbox" id="checkbox"/>
+              <i class="gg-moon moon active"></i>
+              <i class="gg-sun sun active"></i>
+          </label>
+          
           <button
             class="navbar-toggler"
             type="button"
@@ -47,71 +51,64 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="fa fa-bars"></span>
+            <span class="fa fa-times"></span>
           </button>
-
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="mw__nav nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="mw__nav nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="mw__nav nav-item">
-                <a class="nav-link" href="#">Services</a>
-              </li>
-              <li class="mw__nav nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Pages
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Blog Posts</a></li>
-                  <li><a class="dropdown-item" href="#">Landing page</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">404 page</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="mw__nav nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link search" href="#">
-                  <span class="fa fa-search"></span>
-                </a>
-              </li>
-              <li class="head__button">
-                <button
-                  type="button"
-                  class="btn nav-item btn-outline-dark button__1"
-                >
-                  Schedule a demo
-                </button>
-              </li>
-            </ul>
-              <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                  <input  type="checkbox" id="checkbox"/>
-                    <i class="gg-moon moon active"></i>
-                    <i class="gg-sun sun active"></i>
-                </label>
-              </div>
-          </div>
-          </div>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="mw__nav nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="mw__nav nav-item">
+              <a class="nav-link" href="./html/About.html">About</a>
+            </li>
+            <li class="mw__nav nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="mw__nav nav-item dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pages
+                <i class="fa fa-angle-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Blog Posts</a></li>
+                <li><a class="dropdown-item" href="#">Landing page</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">404 page</a>
+                </li>
+              </ul>
+            </li>
+            <li class="mw__nav nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link search" href="#">
+                <span class="fa fa-search"></span>
+              </a>
+            </li>
+            <li class="head__button">
+              <button
+                type="button"
+                class="btn nav-item btn-outline-dark button__1"
+              > Schedule a demo
+              </button>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
+    <div class="semi__header"></div>
     <section class="mwAnchor my-auto">
       <div class="anchor__bg bg__fixed"></div>
-      <div class="container row">
-        <div class="col-6">
+      <div class="container row pt-5">
+        <div class="col-md-12 col-lg-6">
           <h1>We Execute Our Ideas From Start to Finish</h1>
           <p>
             Building a beautiful interactive business for startups and
@@ -121,77 +118,78 @@
             GET STARTED
           </button>
         </div>
-        <img
-          src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/main.png"
-          alt="Master work theme"
-          class="col-6"
-        />
+        <div class="anchor__img col-md-12 col-lg-6">
+          <img
+            src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/main.png"
+            alt="Master work theme"
+          />
+        </div>
       </div>
     </section>
     <section class="specific text-center">
+      <div class="mwTitle">
+        <h3>WHY CHOOSE US</h3>
+        <h1>Tools for business startup to professional</h1>
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+          posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis
+          sodales quis. Integer sit amet mattis quam.
+        </p>
+      </div>
       <div class="specific__content container">
-        <div class="mwTitle">
-          <h3>WHY CHOOSE US</h3>
-          <h1>Tools for business startup to professional</h1>
-          <p>
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-            posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis
-            sodales quis. Integer sit amet mattis quam.
-          </p>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="specific__2">
+            <a href="#">
+              <img
+                rel="stylesheet"
+                src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/s1.png"
+              />
+              <h3>Interactive</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Facilis, temporibus earum. Reprehenderit totam modi autem
+                voluptas expedita magni mollitia molestiae.
+              </p>
+            </a>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-4">
-            <div class="specific__2">
-              <a href="#">
-                <img
-                  rel="stylesheet"
-                  src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/s1.png"
-                />
-                <h3>Interactive</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Facilis, temporibus earum. Reprehenderit totam modi autem
-                  voluptas expedita magni mollitia molestiae.
-                </p>
-              </a>
-            </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="specific__2">
+            <a href="#" class="">
+              <img
+                rel="stylesheet"
+                src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/s2.png"
+              />
+              <h3>Business</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Facilis, temporibus earum. Reprehenderit totam modi autem
+                voluptas expedita magni mollitia molestiae.
+              </p>
+            </a>
           </div>
-          <div class="col-4">
-            <div class="specific__2">
-              <a href="#" class="">
-                <img
-                  rel="stylesheet"
-                  src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/s2.png"
-                />
-                <h3>Business</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Facilis, temporibus earum. Reprehenderit totam modi autem
-                  voluptas expedita magni mollitia molestiae.
-                </p>
-              </a>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="specific__2">
-              <a href="#" class="">
-                <img
-                  rel="stylesheet"
-                  src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/s3.png"
-                />
-                <h3>Inspiration</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Facilis, temporibus earum. Reprehenderit totam modi autem
-                  voluptas expedita magni mollitia molestiae.
-                </p>
-              </a>
-            </div>
+        </div>
+        <div class="col-sm-12 col-lg-4">
+          <div class="specific__2">
+            <a href="#" class="">
+              <img
+                rel="stylesheet"
+                src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/s3.png"
+              />
+              <h3>Inspiration</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Facilis, temporibus earum. Reprehenderit totam modi autem
+                voluptas expedita magni mollitia molestiae.
+              </p>
+            </a>
           </div>
         </div>
       </div>
+    
     </section>
-    <section class="mwIntro">
+    <section class="mwIntro container-fluid">
       <div class="container row">
         <div class="col-6 intro__content">
           <h3>ABOUT OUR COMPANY</h3>
@@ -208,21 +206,19 @@
           <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/about.jpg" alt="about">
         </div>
       </div>
-    </section>
-    <section class="mwNumber">
-      <div class="container">
-        <div class="row">
-          <div class="col-4">
-            <div class="number__content">
-              <span>Happy Customers</span>
-              <h1 class="mwcounter">10458</h1>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-                atque sed.
-              </p>
-            </div>
+    
+      <div class="mwNumber container row">
+        <div class="col-md-6 col-lg-4">
+          <div class="number__content">
+            <span>Happy Customers</span>
+            <h1 class="mwcounter">10458</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
+              atque sed.
+            </p>
           </div>
-          <div class="col-4">
+        </div>
+          <div class="col-md-6 col-lg-4">
             <div class="number__content">
               <span>Winning Awards</span>
               <h1 class="mwcounter">890</h1>
@@ -232,7 +228,7 @@
               </p>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-md-6 col-lg-4 mx-auto">
             <div class="number__content">
               <span>Completed Projects</span>
               <h1 class="mwcounter">5345</h1>
@@ -243,8 +239,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     <section class="mwCarousel container-fluid">
       <div class="carousel__bg bg__fixed"></div>
       <div class="container row">
@@ -263,68 +258,77 @@
       </div>
     </section>
     <section class="faq container-fluid">
+      <div class="mwTitle text-center">
+        <h3>QUESTIONS AND ANSWERS</h3>
+        <h1>General FAQs</h1>
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+          cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis sodales
+          quis. Integer sit amet mattis quam.
+        </p>
+      </div>
       <div class="container">
-        <div class="mwTitle text-center">
-          <h3>QUESTIONS AND ANSWERS</h3>
-          <h1>General FAQs</h1>
-          <p>
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis sodales
-            quis. Integer sit amet mattis quam.
-          </p>
-        </div>
         <div class="row">
           <div class="col-5">
             <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/women.jpg" alt="women"/>
           </div>
           <ul class="faq__content col-7">
             <li>
-              <button onclick="myFunction(1)"><h4>There are many passages but the majority?</h4></button>
-              <div id="FAQ__1" class="faq__detail">
-                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
-                </p>
-              </div> 
+              <button class="faq__title row" onclick="myFunction(1)">
+                <h4 class="col-11">There are many passages but the majority?</h4>
+                <i class="fa fa-angle-down col-1" id="button__arrow-1" ></i>
+              </button>
+              
+              <p id="FAQ__1" class="faq__detail">Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+              </p>
             </li>
             <li>
-              <button onclick="myFunction(2)"><h4>There are many passages but the majority?</h4></button>
-              <div id="FAQ__2">
-                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
-                </p>
-              </div> 
+              <button class="faq__title row" onclick="myFunction(2)">
+                <h4 class="col-11">Lorem ipsum dolor sit amet.</h4>
+                <i class="fa fa-angle-down col-1" id="button__arrow-2"></i>
+              </button>
+              <p id="FAQ__2" class="faq__detail">Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+              </p>
             </li>
             <li>
-              <button onclick="myFunction(3)"><h4>There are many passages but the majority?</h4></button>
-              <div id="FAQ__3">
-                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
-                </p>
-              </div> 
+              <button class="faq__title row" onclick="myFunction(3)">
+                <h4 class="col-11">We denonce with rateous?</h4>
+                <i class="fa fa-angle-down col-1" id="button__arrow-3"></i>
+              </button>
+              <p id="FAQ__3" class="faq__detail">Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+              </p>
             </li>
             <li>
-              <button onclick="myFunction(4)"><h4>There are many passages but the majority?</h4></button>
-              <div id="FAQ__4">
-                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
-                </p>
-              </div> 
+              <button class="faq__title row" onclick="myFunction(4)">
+                <h4 class="col-11">Lorem ipsum dolor sit amet.</h4>
+                <i class="fa fa-angle-down col-1" id="button__arrow-4"></i>
+              </button>
+              <p id="FAQ__4" class="faq__detail">Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+              </p>  
             </li>
             <li>
-              <button onclick="myFunction(5)"><h4>There are many passages but the majority?</h4></button>
-              <div id="FAQ__5">
-                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
-                </p>
-              </div> 
+              <button class="faq__title row" onclick="myFunction(5)">
+                <h4 class="col-11">Lorem ipsum dolor sit amet.</h4>
+                <i class="fa fa-angle-down col-1" id="button__arrow-5"></i>
+              </button>
+              <p id="FAQ__5" class="faq__detail">Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+              </p>  
             </li>
             <li>
-              <button onclick="myFunction(6)"><h4>There are many passages but the majority?</h4></button>
-              <div id="FAQ__6">
-                <p>Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
-                </p>
+              <button class="faq__title row" onclick="myFunction(6)">
+                <h4 class="col-11">Lorem ipsum dolor sit amet.</h4>
+                <i class="fa fa-angle-down col-1" id="button__arrow-6"></i>
+              </button>
+              <p id="FAQ__6" class="faq__detail">Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+              </p>  
+            </li>
               </div> 
             </li>
           </ul>
         </div>
       </div>
     </section>
-    <section class="mwFeature container">
+    <section class="mwFeature container-fluid">
       <div class="mwTitle">
         <h3>FEATURED CASES</h3>
         <h1>Completed Projects</h1>
@@ -334,7 +338,7 @@
           quis. Integer sit amet mattis quam.
         </p>
       </div>
-      <div class="container-2">
+      <div class="container">
       <ul class="nav nav-pills row mb-3" id="pills-tab" role="tablist">
         <li class="nav-item col-4 row" role="presentation">
           <button
@@ -397,11 +401,12 @@
             </p>
             <button class="btn btn-outline-dark button__1">KNOW MORE</button>
           </div>
-          <img
-            src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b4.jpg"
-            alt="b4"
-            class="feature__img col-6"
-          />
+          <div class="feature__img col-6">
+            <img
+              src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b4.jpg"
+              alt="b4"
+            />
+          </div>
         </div>
         <div
           class="tab-pane fade row"
@@ -410,11 +415,13 @@
           aria-labelledby="pills-profile-tab"
           tabindex="0"
         >
-          <img
-            src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b5.jpg"
-            alt="b4"
-            class="feature__img col-6"
-          />
+          <div class="feature__img col-6">
+            <img
+              src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b5.jpg"
+              alt="b4"
+            />
+          </div>
+        
           <div class="feature__content col-6">
             <h2>Why a visual identity system is more memorable</h2>
             <p>
@@ -443,11 +450,12 @@
             </p>
             <button class="btn btn-outline-dark button__1">KNOW MORE</button>
           </div>
-          <img
-            src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b6.jpg"
-            alt="b4"
-            class="feature__img col-6"
-          />
+          <div class="feature__img col-6">
+            <img
+              src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b6.jpg"
+              alt="b4"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -521,10 +529,11 @@
               </div>
             </div>         
           </div>
+        </div>
       </div>
     </section>
-    <section class="mwAction">
-      <div class="container mwTitle">
+    <section class="mwAction container-fluid">
+      <div class="container-2 mwTitle">
         <h1>Ready to build your own brand community?</h1>
         <p>
           Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
@@ -540,7 +549,7 @@
     <footer class="">
       <div class="container">
         <div class="row">
-          <div class="col-6 row">
+          <div class="col-md-12 col-lg-6 row">
             <div class="col-4">
               <h3>
                 <a href="#">Meta</a>
@@ -584,7 +593,7 @@
               </p>
             </div>
           </div>
-          <div class="footer__form col-6">
+          <div class="footer__form col-md-12 col-lg-6">
             <h3>
               <a href="#">Newsletter</a>
             </h3>
@@ -598,14 +607,14 @@
             </div>
           </div>
         </div>
-        <div class="copy__right">
-          <p>© 2024 Masterwork. All Rights Reserved | WordPress Theme by<span><a class="w3layout" href="#">W3Layouts.</a></span></p>
-          <div class="social">
-            <a href="#"><span><i class="fab fa-facebook-f"></i></span></a>
-            <a href="#"><span><i class="fab fa-linkedin-in"></i></span></a>
-            <a href="#"><span><i class="fab fa-twitter"></i></span></a>
-            <a href="#"><span><i class="fab fa-google-plus-g"></i></span></a>
-            <a href="#"><span><i class="fab fa-github"></i></span></a>
+        <div class="copy__right row">
+          <p class="col-md-12 col-lg-6 text-center">© 2024 Masterwork. All Rights Reserved | WordPress Theme by<span><a class="w3layout" href="#">W3Layouts.</a></span></p>
+          <div class="social col-md-12 col-lg-6 text-center">
+            <a href="#" class="float-lg-end"><span><i class="fab fa-facebook-f"></i></span></a>
+            <a href="#" class="float-lg-end"><span><i class="fab fa-linkedin-in"></i></span></a>
+            <a href="#" class="float-lg-end"><span><i class="fab fa-twitter"></i></span></a>
+            <a href="#" class="float-lg-end"><span><i class="fab fa-google-plus-g"></i></span></a>
+            <a href="#" class="float-lg-end"><span><i class="fab fa-github"></i></span></a>
           </div>
         </div>
       </div>

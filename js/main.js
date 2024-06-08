@@ -18,22 +18,33 @@ var rotated = false;
 document.getElementById('buy__option').onclick = function() {
     var div = document.getElementById('buy__arrow'),
         deg = rotated ? 0 : 180;
-    div.style.webkitTransform = 'rotate('+deg+'deg)'; 
-    div.style.mozTransform    = 'rotate('+deg+'deg)'; 
-    div.style.msTransform     = 'rotate('+deg+'deg)'; 
-    div.style.oTransform      = 'rotate('+deg+'deg)'; 
-    div.style.transform       = 'rotate('+deg+'deg)'; 
+    div.style.transform = 'rotate('+deg+'deg)'; 
     rotated = !rotated;
 }
-function myFunction(y) {
-    var x = document.getElementById("FAQ__"+y);
-    x.style.display = x.style.display != "block"?"block":"none";
-  }
-  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
+function myFunction(y) {
+    var x = document.getElementById("FAQ__"+y),
+        a = document.getElementById("button__arrow-"+y),
+        deg = rotated ? 0 : 180;
+    x.style.display = x.style.display != "block"?"block":"none";
+    x.style.position='unset';
+    a.style.transform = 'rotate('+deg+'deg)'; 
+    rotated = !rotated;
+}
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+  function scrollNavbar(){
+    var a = document.getElementById('header__fixed')
+    if (document.body.scrollTop>80 || 
+        document.documentElement.scrollTop>80){
+        a.style.height='70px'
+    } else{
+        a.style.height='90px'
+    }
+  }
+  window.onscroll= function() {scrollNavbar();};
   
-let moon = document.querySelector('.moon')
-let sun = document.querySelector('.sun')
+    let moon = document.querySelector('.moon')
+    let sun = document.querySelector('.sun')
 function switchTheme(e) {
     
     if (e.target.checked) {
