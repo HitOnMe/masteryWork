@@ -191,7 +191,22 @@ input .checkbox {
     left: 0;
     z-index: 999;
 }
-
+.header__fix button{
+    position: relative
+}
+.header__fix button span{
+    position: absolute;
+    width: 100%
+}
+.fa-times, .fa-bars {
+    display: none;
+  }
+  .fa-bars.active, .fa-times.active {
+    display: inline;
+  }
+.fa-times.active{
+    color: white
+}
 #header__fixed, .semi__header {
     height: 90px;
 }
@@ -201,16 +216,17 @@ header li {
 }
 
 header .container {
+    background-color: var(--bg-color);
     line-height: 50px;
     padding: 0 12px;
     position: relative;
+    transition: all .5s
 }
 
 header .mw__nav.dropdown i {
     color: var(--text-color);
     font-size: 0.7rem;
 }
-
 .navbar-toggler {
     display: flex;
     justify-content: center;
@@ -464,12 +480,19 @@ header i {
     right: 0;
     top: 30px;
 }
-.faq li p{
-    padding: 0 12px 20px;
+.faq__detail{
     position: absolute;
+    padding: 0 12px 20px;
+    transform: translateY(100px);
     line-height: 20px;
-    margin:0
+    margin:0;
+   
 }
+.faq__detail.active {
+    position: relative;
+    transform: translateY(0);
+    transition: all .25s ease-in-out
+}   
 .faq h4{
     font-size: 1.2rem;
     text-align:left;
@@ -658,13 +681,11 @@ button.buy__action i, .offcanvas i{
     }
     .theme-switch-wrapper .moon,.theme-switch-wrapper .sun {
         position: absolute;
-        right: 60px;
-        top: 10px
+        right: 2.5em;
+        top: 0.8em
     }
     #navbarNavDropdown{
         text-align:center
     }
-    .navbar.container{
-        line-height: 25px
-    }
+   
 }

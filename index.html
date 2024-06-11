@@ -38,8 +38,8 @@
 
           <label class="theme-switch-wrapper theme-switch" for="checkbox">
             <input  type="checkbox" id="checkbox"/>
-              <i class="gg-moon moon active"></i>
-              <i class="gg-sun sun active"></i>
+              <i class="gg-moon moon active" id="moon"></i>
+              <i class="gg-sun sun active" id="sun"></i>
           </label>
           
           <button
@@ -50,9 +50,11 @@
             aria-controls="navbarNavDropdown"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            id="navbar-toggler"
           >
-            <span class="fa fa-bars"></span>
-            <span class="fa fa-times"></span>
+          
+            <span class="fa fa-bars active" id="bars"></span>
+            <span class="fa fa-times" id="times"></span>
           </button>
         
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -279,7 +281,7 @@
                 <i class="fa fa-angle-down col-1" id="button__arrow-1" ></i>
               </button>
               
-              <p id="FAQ__1" class="faq__detail">Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
+              <p id="FAQ__1" class="faq__detail" aria-expanded="true">Voluptates amet earum velit nobis aliquam laboriosam nihil debitis facere voluptatibus consectetur quae quasi fuga, ad corrupti libero omnis sapiente non assumenda, incidunt officiis eaque iste minima autem.
               </p>
             </li>
             <li>
@@ -546,7 +548,7 @@
         </div>
       </div>
     </section>
-    <footer class="">
+    <footer id="footer__fixed">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-lg-6 row">
