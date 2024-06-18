@@ -71,11 +71,7 @@ function myFunction(id) {
   // Adjust navbar height on scroll
 function adjustNavbar() {
     const header = domID('header__fixed');
-    if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
-        header.classList.add('navbar__fixed')
-    } else{
-        header.classList.remove('navbar__fixed')
-    }
+    header.style.height = (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) ? '70px' : '90px';
 }
 window.onscroll = adjustNavbar;
 
@@ -113,17 +109,24 @@ domID('navbar-toggler').onclick=function() {
     bars.classList.toggle('active');
     times.classList.toggle('active');
   };
- 
-  function loadContent(elementId, url) {
+  function loadContent(elementId, url, targetId) {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function() {
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById(elementId).innerHTML = xhr.responseText;
+            var tempDiv = document.createElement("div");
+            tempDiv.innerHTML = xhr.responseText;
+            var targetContent = tempDiv.querySelector(targetId);
+            if (targetContent) {
+                document.getElementById(elementId).innerHTML = targetContent.innerHTML;
+            }
         }
     };
     xhr.send();
+    
 }
 
-loadContent('header', '../index.html #header__fixed');
-loadContent('footer', '../index.html #footer__fixed');
+// Gọi hàm loadContent khi trang được tải
+
+  
+  

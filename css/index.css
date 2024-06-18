@@ -101,12 +101,11 @@ p, a, i, p.card-text {
 .theme-switch-wrapper .sun, .theme-switch-wrapper .moon {
     position: absolute;
     top: 24px;
-    right: 10px;
+    right: 20px;
 }
 
 .theme-switch-wrapper .sun {
     color: white;
-    right: 8px;
     opacity: 0;
 }
 
@@ -191,12 +190,18 @@ input .checkbox {
     left: 0;
     z-index: 999;
 }
-.header__fix button{
-    position: relative
+.header__fix, .semi__header{
+    height: 90px
+}
+.navbar__fixed{
+    height: 70px
 }
 .header__fix button span{
     position: absolute;
     width: 100%
+}
+.header__fix button{
+    position: relative
 }
 .fa-times, .fa-bars {
     display: none;
@@ -207,9 +212,7 @@ input .checkbox {
 .fa-times.active{
     color: white
 }
-#header__fixed, .semi__header {
-    height: 90px;
-}
+
 
 header li {
     padding: 0 5px;
@@ -258,9 +261,12 @@ header i {
 
 #navbarNavDropdown {
     justify-content: right;
-    padding-right: 25px;
+    text-align:center;
+    padding: 0 30px
 }
-
+#navbarNavDropdown ul{
+    padding-
+}
 .fa.fa-search {
     width: 40px;
     height: 40px;
@@ -676,16 +682,33 @@ button.buy__action i, .offcanvas i{
     opacity: 1;
   }
 @media screen and (max-width: 992.12px) {
-    .mwAnchor p, .anchor__img{
-        width: 50%
+    header .container {
+        line-height: 10px
+    }
+    .semi__header{
+        height: 51px
+    }
+    .header__fix{
+        padding: 15px 0;
+        height: auto;
+    }
+    .navbar__fixed{
+        padding: 10px 0;
+        height: auto
+    }
+    #navbarNavDropdown{
+        line-height: 20px;
+    }
+    #navbarNavDropdown ul{
+        padding-top: 20px
+    }
+    .head__button{
+        padding-bottom: 20px
     }
     .theme-switch-wrapper .moon,.theme-switch-wrapper .sun {
         position: absolute;
         right: 2.5em;
-        top: 0.8em
+        top: 0.3em
     }
-    #navbarNavDropdown{
-        text-align:center
-    }
-   
-}
+} 
+
