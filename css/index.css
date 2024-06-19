@@ -1,13 +1,15 @@
+/* light theme color */
 :root {
-    --primary-color: rgba(255, 255, 255, 0.788);
+    --primary-color: rgba(255, 255, 255, 0.9);
     --secondary-color: #f7f9fc;
     --text-color: #5a5a5a;
     --font-color: #2C3038;
     --bg-color: #fff;
     --heading-color: black;
     --card-curve: 6px;
+    --card--box-shadow:1px 5px 7.5px rgba(14, 13, 13, 0.2)
 }
-
+/* dark theme color */
 [data-theme="dark"] {
     --primary-color: rgba(255, 255, 255, 0.756);
     --secondary-color: #191c1d;
@@ -15,14 +17,18 @@
     --font-color: white;
     --bg-color: #131617;
     --heading-color: #eee;
+    --card--box-shadow:1px 5px 7.5px rgba(14, 13, 13, 0.2)
 }
-
+/* general tags setup */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+.row>*{
+    padding-left: 0;
+    padding-right: 0
+}
 body {
     font-family: 'Nunito', sans-serif;
     background-color: var(--bg-color);
@@ -67,14 +73,14 @@ a {
 
 img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: var(--card-curve);
 }
 
 .specific__2, .mwIntro, .mwNumber, .faq, footer, footer h3 a {
     background-color: var(--secondary-color);
 }
 
-header, .specific, .specific__2:hover, .faq li, .mwFeature, .row.card-body, .mwAction, .header__fix, .faq button {
+header, .specific, .specific__2:hover, .faq li, .mwFeature, .row.card-body, .mwAction, .header__fix, .faq button  {
     background-color: var(--bg-color);
 }
 
@@ -101,7 +107,7 @@ p, a, i, p.card-text {
 .theme-switch-wrapper .sun, .theme-switch-wrapper .moon {
     position: absolute;
     top: 24px;
-    right: 20px;
+    right: 30px;
 }
 
 .theme-switch-wrapper .sun {
@@ -154,7 +160,7 @@ input .checkbox {
 .button__1 {
     color: #dc4f72;
     border: 1px solid #dc4f72;
-    border-radius: 5px;
+    border-radius: var(--card-curve);
 }
 
 .button__1:hover {
@@ -203,13 +209,13 @@ input .checkbox {
 .header__fix button{
     position: relative
 }
-.fa-times, .fa-bars {
+header .fa-times, header .fa-bars {
     display: none;
   }
-  .fa-bars.active, .fa-times.active {
+header .fa-bars.active, header .fa-times.active {
     display: inline;
   }
-.fa-times.active{
+header .fa-times.active{
     color: white
 }
 
@@ -237,7 +243,10 @@ header .mw__nav.dropdown i {
     height: 36px;
     background-color: #dc4f72;
 }
-
+.navbar-toggler:focus {
+    box-shadow:0px 0px 6px 0rem;
+    border: 1px solid #dc4f72
+}
 .fa.fa-bars {
     width: 24px;
     height: 24px;
@@ -262,10 +271,11 @@ header i {
 #navbarNavDropdown {
     justify-content: right;
     text-align:center;
-    padding: 0 30px
+    padding: 0 40px
 }
-#navbarNavDropdown ul{
-    padding-
+.nav-item.px-2 span{
+    opacity: .7;
+    font-size: 1rem
 }
 .fa.fa-search {
     width: 40px;
@@ -277,30 +287,47 @@ header i {
     text-align: center;
 }
 
-.mw__nav {
+header .nav-link, .dropdown-item {
     position: relative;
+    display: inline-block
 }
-
-.mw__nav::after {
+.dropdown-item{
+    color:var(--font-color);
+}
+header .nav-link::after,.dropdown-item::after {
     content: '';
     position: absolute;
     display: block;
-    left: 18px;
-    bottom: 30%;
     width: 0;
     height: 2px;
     background-color: #dc4f72;
     transition: all 0.5s;
 }
-
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show, a.nav-link:hover {
+header .nav-link::after{
+    left: 8px;
+    bottom: 30%;
+}
+.dropdown-item::after{
+    left: 15px;
+    bottom: 5px
+}
+.dropdown-item:hover{
+    background-color:unset
+}
+.nav-link:hover::after, .dropdown-item:hover::after {
+    width: 20px;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show, a.nav-link:hover, .mw__nav:hover .fa.fa-angle-down {
     color: #dc4f72;
 }
-
-.mw__nav:hover::after {
-    width: 20%;
+.dropdown-menu[data-bs-popper]{
+    top: 90%;
+    left: -50%;
+    background-color: var(--bg-color);
+    box-shadow: var(--card--box-shadow);
+    line-height: 30px;
+    border: none
 }
-
 .mwAnchor {
     position: relative;
     background: linear-gradient(to right, var(--bg-color) 1%, var(--primary-color));
@@ -412,11 +439,15 @@ header i {
 .card.item{
     border:none
 }
-.specific .row{
-    justify-content:space-around
-}
+
 .specific img{
     width: unset
+}
+.specific__content.container{
+    max-width: 1180px
+}
+.specific__content .row>div{
+    padding: 15px
 }
 .specific__2 h3 {
     margin: 16px 0;
@@ -445,7 +476,7 @@ header i {
 }
 
 .mwIntro img, .faq img, .mwFeature img{
-    border-radius: 5px;
+    border-radius: var(--card-curve);
     object-fit:cover;
     box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transition: all .5s
@@ -454,14 +485,28 @@ header i {
 .mwIntro img:hover, .faq img:hover, .mwFeature img:hover{
     transform: translateY(-10px)
 }
-.number__content{
-    padding: 2rem;
-    box-shadow:1px 5px 7.5px rgba(14, 13, 13, 0.2)
+.mwNumber.container {
+    max-width: 1230px;
 }
+.mwNumber>div{
+    padding: 15px
+}
+.number__content{
+    background-color: var(--bg-color);
+    padding: 2rem;
+    box-shadow:1px 5px 7.5px rgba(14, 13, 13, 0.2);
+    border-radius: var(--card-curve)
+}
+
 .number__content h1{
     color:#dc4f72
 }
-
+.number__content span{
+    font-weight: 700
+}
+.faq .row{
+    padding-left: 23px
+}
 .faq button{    
     border:none;
     cursor: pointer;
@@ -470,35 +515,33 @@ header i {
 .faq ul{
     list-style:none
 }
-.faq .row .col-7 li{
+.faq__content li{
     font-size: 1rem;
     background-color: var(--bg-color);
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     border: 1px solid #e7eaecc4 ;
     position: relative;
     line-height: 70px;
     padding-left: 10px;
-    border-radius: 5px;
+    border-radius: var(--card-curve);
     overflow:hidden
 }
+
 .faq button i{
     position:absolute;
     right: 0;
     top: 30px;
+    transition: all .3s ease-in-out
 }
 .faq__detail{
-    position: absolute;
-    padding: 0 12px 20px;
-    transform: translateY(100px);
+    padding: 0 15px;
     line-height: 20px;
     margin:0;
-   
+    display:none;
+    transform:translateY(30px);
+    transition: transform .3s ease-in-out, max-height .3s ease-in-out
 }
-.faq__detail.active {
-    position: relative;
-    transform: translateY(0);
-    transition: all .25s ease-in-out
-}   
+
 .faq h4{
     font-size: 1.2rem;
     text-align:left;
@@ -508,10 +551,27 @@ header i {
     width: 60%;
     margin: auto
 }
-
+.faq img{
+    position: sticky;
+    top: 20px
+}
 .faq__content{
     padding: 0 15px 0 48px
 }
+
+.active__1{
+    max-height: 800px;
+    transform: translateY(0)
+}
+
+.rotate {
+    
+    transition: all 0.3s ease-in-out; 
+}
+.hidden{
+    display: none
+}
+
 .mwFeature ul.nav-pills {
     justify-content:center
 }
@@ -540,7 +600,7 @@ header i {
     margin: 20px 0
 }
 .feature__img{
-    border-radius: 5%
+    border-radius: var(--card-curve)
 }
 .mwFeature .container{
     max-width: 996px
@@ -563,16 +623,17 @@ header i {
     background-color: white;
     padding: 32px;
     box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
-    border-radius: 5px
+    border-radius: var(--card-curve)
 }
 .foot__email {
     background-color: #f7f9fc;
-    border-radius: 5px;
+    border-radius: var(--card-curve);
     padding: 12px 20px;
     outline:none;
     border:none;
     width: 78%
 }
+
 footer h3 a{
     text-transform:capitalize
 }
@@ -608,6 +669,7 @@ footer .row{
 .copy__right a{
     padding: 0 10px;
 }
+
 .social span{
     color:black;
     font-weight: bold
@@ -618,25 +680,25 @@ footer .row{
 .w3layout:hover{
     color: red
 }
-.offcanvas, button.buy__action{
-    position: fixed!important;
-    right: 0!important;
+.offcanvas.offcanvas-end, #buy__option.buy__action{
+    position: fixed;
+    right: 0;
 }
-.offcanvas{
-    width: 90px!important;
-    height: 320px!important;
-    top: 21%!important;
-    background-color: #0d1326!important;
-    border-radius: 8px 0 0 8px!important;
-    display: grid!important;
-    grid-template-rows: repeat(4, 1fr)!important;
-    text-align:center!important;
-    font-size: 1rem!important;
+.offcanvas.offcanvas-end{
+    width: 90px;
+    height: 320px;
+    top: 21%;
+    background-color: #0d1326;
+    border-radius: 8px 0 0 8px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    text-align:center;
+    font-size: 1rem;
     
 }
-.offcanvas a{
-    color:#9d9d9e!important;
-    font-weight: 700!important
+.offcanvas.offcanvas-end a{
+    color:#9d9d9e;
+    font-weight: 700
 }
 .tip__line{
     position: relative;
@@ -650,12 +712,12 @@ footer .row{
     bottom:20%;
     background-color:#8b8b8c85
 }
-button.buy__action {
+#buy__option.buy__action {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    top: 22%!important;
-    right: 1%!important;
+    top: 22%;
+    right: 1%;
     background-color: #0d132678;
     border: none;
     color:#e6ebffdf;
@@ -681,34 +743,102 @@ button.buy__action i, .offcanvas i{
     visibility: visible;
     opacity: 1;
   }
+  .mfp-bg {
+    background: rgba(0, 0, 0, 0.8); /* Đặt màu nền mờ cho backdrop */
+  }
+  #close-popup span{
+    color:#cccdce;
+    cursor: pointer;
+    transition: all .5s
+  }
+ #close-popup span:hover{
+    color:white
+ }
+  #popup-content input{
+     background-color: var(--secondary-color);
+     font-size: 1rem;
+     color: var(--text-color);
+     line-height: 25px;
+     height:55px;
+     padding: 15px 20px 20px;
+     border-radius: 6px 0 0 6px;
+     border: 1px solid #2C3038
+  }
+  #popup-content input:focus{
+    box-shadow:none
+  }
+  #popup-content input::placeholder{
+    color: var(--text-color)
+  }
+  #popup-content button{
+    background-color:#dc4f72;
+    line-height: 25px;
+    text-align: center;
+    color: #F5f9fc;
+    font-weight: 500;
+    height: 55px;
+    border-radius: 0 6px 6px 0;
+    padding: 0 28px
+  }
+  .input-group{
+    position: relative
+  }
+  #popup-content .form-control-clear {
+    position: absolute;
+    right: 20%;
+    bottom: 30%;
+    cursor:pointer;
+    display: none
+}
 @media screen and (max-width: 992.12px) {
     header .container {
-        line-height: 10px
+        line-height: 10px;
     }
     .semi__header{
-        height: 51px
+        padding: 33px 0;
+        height: auto
     }
     .header__fix{
         padding: 15px 0;
         height: auto;
+        z-index: 9999
     }
     .navbar__fixed{
         padding: 10px 0;
         height: auto
     }
     #navbarNavDropdown{
-        line-height: 20px;
+        line-height: 25px;
     }
     #navbarNavDropdown ul{
-        padding-top: 20px
-    }
-    .head__button{
-        padding-bottom: 20px
+        padding-top: 20px;
+        padding-bottom:20px
     }
     .theme-switch-wrapper .moon,.theme-switch-wrapper .sun {
         position: absolute;
-        right: 2.5em;
-        top: 0.3em
+        right: 3em;
+        top: 0.3em;
+        transition: none
+    }
+    .nav-link::after{
+        left: 0;
+        bottom: 0
+    }
+    .nav-link:hover::after{
+        width: 20px
+    }
+    .dropdown-menu[data-bs-popper]{
+        text-align: center;
+    }
+    .mw__nav .fa.fa-angle-down{
+        opacity: 0
     }
 } 
 
+@media screen and (min-width: 567.98px){
+    .container.row, header .container{
+        padding-left: 25px;
+        padding-right: 25px
+    }
+    
+}
