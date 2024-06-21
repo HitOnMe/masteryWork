@@ -19,17 +19,21 @@
 }
 #carousel .container {
   position: absolute;
-  top: 65px;
-  left: 90px;
+  top: 152px;
+  left: 100px;
   padding-left: 20px;
+  max-width: 1250px;
 }
 .carousel #carousel__left {
   color: black;
   width: 30%;
 }
 #carousel__left h3 {
-  font-size: 50px;
+  font-size: 45px;
   max-width: 510px;
+  line-height: 50px;
+  color: black;
+  text-transform: capitalize;
 }
 #carousel__left p {
   font-size: 20px;
@@ -66,10 +70,14 @@
 }
 #why .card {
   background-color: #f7f9fc;
-  padding: 50px 48px;
+  padding: 20px 30px;
   border-color: transparent;
   text-align: center;
   transition: all 0.5s;
+  padding-top: 25px;
+}
+#why__cards img {
+  width: 22%;
 }
 #why .card:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
@@ -78,7 +86,7 @@
 }
 
 #why .card h1 {
-  padding: 15px 0;
+  padding: 12px 0;
   font-size: 30px;
 }
 
@@ -114,27 +122,38 @@
   padding: 10px;
   background-color: #f7f9fc;
 }
-
+#about .about__left h1 {
+  font-size: 30px;
+  line-height: 35px;
+  padding-right: 40px;
+}
+#about__header .container {
+  max-width: 1240px;
+}
 #about .about__left {
   padding: 10px;
 }
 #about .about__left p {
   font-size: 15px;
-  padding: 15px 0;
+  padding-right: 14px;
   color: #5a5a5a;
+  max-width: 508px;
 }
 
 #about .about__left .container {
-  padding: 0 70px;
+  padding: 0 20px;
 }
 
 #about .about__right {
-  padding: 0 30px;
 }
-
+#about #about__header {
+  max-width: 1300px;
+}
 #about .about__right img {
   border-radius: 6px;
   transition: all 0.5s;
+  height: 90%;
+  width: 90%;
 }
 
 #about .about__right img:hover {
@@ -142,9 +161,8 @@
 }
 
 #about button {
-  font-size: 15px;
   font-weight: 300;
-  margin-top: 45px;
+  margin-top: 40px;
 }
 #about .btn {
   border-radius: 4px;
@@ -162,8 +180,8 @@
 }
 
 #about__footer {
-  margin-top: 100px;
   padding: 0 25px;
+  margin-bottom: 50px;
 }
 #about .card {
   padding: 30px;
@@ -177,7 +195,7 @@
 
 #about .card h4 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 #about .card h1 {
@@ -193,7 +211,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  margin-top: 100px;
 }
 
 #mac .mac__content {
@@ -201,7 +218,10 @@
 }
 
 #mac .mac__content h1 {
-  font-size: 35px;
+  font-size: 28px;
+  color: #eee;
+  line-height: 33px;
+  max-width: 495px;
 }
 
 #mac .mac__content p {
@@ -209,6 +229,8 @@
   color: #eee;
   line-height: 24.5px;
   padding: 20px 0;
+
+  max-width: 508px;
 }
 
 #mac .btn-light {
@@ -227,7 +249,7 @@
 } */
 
 #ready {
-  padding-top: 50px;
+  padding: 50px 0;
 }
 .ready__up h1 {
   font-size: 50px;
@@ -310,7 +332,9 @@ footer {
   padding-left: 50px;
 }
 footer h3 {
-  font-size: 20px;
+  font-size: 18px;
+  color: #2c3038;
+  text-transform: capitalize;
 }
 
 #footer__right .input {
@@ -498,7 +522,7 @@ hr {
   }
   #carousel .container {
     position: absolute;
-    top: 47px;
+    top: 154px;
     left: 20px;
     padding-left: 20px;
     flex-direction: column;
@@ -517,6 +541,9 @@ hr {
   }
   #why #card-container big {
     width: 100%;
+  }
+  #why #why__cards .big img {
+    width: 10%;
   }
   #card-container {
     padding: 25px 8px;
@@ -561,7 +588,7 @@ hr {
   #about .about__right img {
     border-radius: 6px;
     transition: all 0.5s;
-    margin-top: 115px;
+    height: 70%;
     margin-left: 41px;
   }
   .container,
@@ -615,6 +642,7 @@ hr {
   #footer__up .footer__content {
     width: 33.33%;
   }
+
   #footer__left {
     margin-top: 50px;
   }
@@ -623,7 +651,6 @@ hr {
     padding: 30px;
   }
   #footer__right button {
-    padding: 10px 85px;
     margin-left: 5px;
     background-color: #dc4f72;
     border-color: #dc4f72;
@@ -862,7 +889,7 @@ hr {
   #footer__right input {
     background-color: #f7f9fc;
     border: none;
-    width: 230px;
+    width: 225px;
     padding: 10px;
     border-radius: 5px;
   }
