@@ -86,7 +86,6 @@
 }
 
 #why .card h1 {
-  padding: 12px 0;
   font-size: 30px;
 }
 
@@ -553,7 +552,7 @@ hr {
     width: 100%;
   }
   #why #why__cards .big img {
-    width: 10%;
+    width: 11%;
   }
   #card-container {
     padding: 25px 8px;
