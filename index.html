@@ -23,6 +23,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <!-- link animation -->
+     <!-- Slick -->
+     <link
+     rel="stylesheet"
+     type="text/css"
+     href="../slick-1.8.1/slick/slick.css"
+     />
+     <link
+     rel="stylesheet"
+     type="text/css"
+     href="../slick-1.8.1/slick/slick-theme.css"
+     />
+
     <!-- link css -->
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/moon.css' rel='stylesheet'>
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/sun.css' rel='stylesheet'>
@@ -478,78 +490,126 @@
       </div>
     </div>
     </section>
-    <section class="mwFeadback">
-      <div class="feedback__bg bg__fixed"></div>
-      <div class="container">
-        <div class="mwTitle">
-          <h3>OUR CLIENTS TESTIMONIALS</h3>
-          <h1>What People Say</h1>
-          <p>
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis sodales
-            quis. Integer sit amet mattis quam.
-          </p>
-        </div>
-        <div class="owl-carousel owl-theme" id="mwCarousel">
-          <div class="card item mb-3 ">
-            <div class="row g-0 card-body">
-              <div class="col-md-4">
-                <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team3.jpg" class="img-fluid rounded-start" alt="...">
+    <div id="whatt">
+      <div
+        class="container d-flex align-items-center whatt__up"
+        style="flex-direction: column"
+      >
+        <h3>OUR CLIENTS TESTIMONIALS</h3>
+        <h1>What People Say</h1>
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+          posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis
+          sodales quis. Integer sit amet mattis quam.
+        </p>
+      </div>
+
+      <div id="what__down" class="container">
+        <div class="container__surf" style="height: 350px">
+          <div class="what__down__container">
+            <div id="card" class="row d-flex">
+              <div id="what__down__left" class="col">
+                <div class="containerne">
+                  <img
+                    src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team4.jpg"
+                    class="img-fluid testimonial-img"
+                    alt="client image"
+                  />
+                </div>
               </div>
-              <div class="col-md-8">
-                <p class="card-text">
-                  <i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto enim dolorem dicta explicabo rem nisi minus similique molestiae sint molestias odio amet unde magni ipsam ipsum laudantium quaerat, culpa quo.
+              <div id="what__down__right" class="col">
+                <span><i class="fa fa-quote-left"></i></span>
+                <p id="para">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda corporis deleniti praesentium doloremque.
+                  Repellendus soluta quos nemo quisquam consectetur temporibus
+                  quam 
+                  obcaecati sapiente quaerat et.
                 </p>
-                <h5 class="card-title">Isabella Mia</h5>
-                <p class="card-text"><small class="text-body-secondary">Company name</small></p>
+                <p id="ten">Benjamin Lucas</p>
+                <p id="company">Company name</p>
               </div>
-            </div>         
+            </div>
           </div>
-          <div class="card item mb-3">
-            <div class="row g-0 card-body">
-              <div class="col-md-4">
-                <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team4.jpg" class="img-fluid rounded-start" alt="...">
+          <div class="what__down__container">
+            <div id="card" class="row d-flex">
+              <div id="what__down__left" class="col">
+                <div class="containerne">
+                  <img
+                    src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team3.jpg"
+                    class="img-fluid testimonial-img"
+                    alt="client image"
+                  />
+                </div>
               </div>
-              <div class="col-md-8">
-                <p class="card-text">
-                  <i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto enim dolorem dicta explicabo rem nisi minus similique molestiae sint molestias odio amet unde magni ipsam ipsum laudantium quaerat, culpa quo.
+              <div id="what__down__right" class="col">
+                <span><i class="fa fa-quote-left"></i></span>
+                <p id="para">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda corporis deleniti praesentium doloremque.
+                  Repellendus soluta quos nemo quisquam consectetur temporibus
+                  quam
+                  obcaecati sapiente quaerat et.
                 </p>
-                <h5 class="card-title">Benjamin Lucas</h5>
-                <p class="card-text"><small class="text-body-secondary">Company name</small></p>
+                <p id="ten">Benjamin Lucas</p>
+                <p id="company">Company name</p>
               </div>
-            </div>         
+            </div>
           </div>
-          <div class="card item mb-3 ">
-            <div class="row g-0 card-body">
-              <div class="col-md-4">
-                <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team5.jpg" class="img-fluid rounded-start" alt="team5">
+          <div class="what__down__container">
+            <div id="card" class="row d-flex">
+              <div id="what__down__left" class="col">
+                <div class="containerne">
+                  <img
+                    src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team5.jpg"
+                    class="img-fluid testimonial-img"
+                    alt="client image"
+                  />
+                </div>
               </div>
-              <div class="col-md-8">
-                <p class="card-text">
-                  <i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto enim dolorem dicta explicabo rem nisi minus similique molestiae sint molestias odio amet unde magni ipsam ipsum laudantium quaerat, culpa quo.
+              <div id="what__down__right" class="col">
+                <span><i class="fa fa-quote-left"></i></span>
+                <p id="para">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda corporis deleniti praesentium doloremque.
+                  Repellendus soluta quos nemo quisquam consectetur temporibus
+                  quam 
+                  obcaecati sapiente quaerat et.
                 </p>
-                <h5 class="card-title">Oliver Bradley</h5>
-                <p class="card-text"><small class="text-body-secondary">Company name</small></p>
+                <p id="ten">Benjamin Lucas</p>
+                <p id="company">Company name</p>
               </div>
-            </div>         
+            </div>
           </div>
-          <div class="card item mb-3">
-            <div class="row g-0 card-body">
-              <div class="col-md-4">
-                <img src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team6.jpg" class="img-fluid rounded-start" alt="...">
+          <div class="what__down__container">
+            <div id="card" class="row d-flex">
+              <div id="what__down__left" class="col">
+                <div class="containerne">
+                  <img
+                    src="https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/team6.jpg"
+                    class="img-fluid testimonial-img"
+                    alt="client image"
+                    style="height: 100%;"
+                  />
+                </div>
               </div>
-              <div class="col-md-8">
-                <p class="card-text">
-                  <i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto enim dolorem dicta explicabo rem nisi minus similique molestiae sint molestias odio amet unde magni ipsam ipsum laudantium quaerat, culpa quo.
+              <div id="what__down__right" class="col">
+                <span><i class="fa fa-quote-left"></i></span>
+                <p id="para">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda corporis deleniti praesentium doloremque.
+                  Repellendus soluta quos nemo quisquam consectetur temporibus
+                  quam 
+                  obcaecati sapiente quaerat et.
                 </p>
-                <h5 class="card-title">William James</h5>
-                <p class="card-text"><small class="text-body-secondary">Company name</small></p>
+                <p id="ten">Benjamin Lucas</p>
+                <p id="company">Company name</p>
               </div>
-            </div>         
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <div
       id="ready"
       class="d-flex align-items-center"
@@ -712,4 +772,54 @@
     <script src="./js/backtoTop2.js"></script>
     <script src="./js/main.js"></script>
     
-   
+     <!-- slick -->
+     <script src="../slick-1.8.1/slick/slick.min.js"></script>
+     <!-- waypoint -->
+     <script
+       src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+       integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+       crossorigin="anonymous"
+       referrerpolicy="no-referrer"
+     ></script>
+     <script>
+      $(document).ready(function () {
+        $(".container__surf").slick({
+          dots: true,
+          infinite: true,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+      });
+      </script>
+      
+    <!-- Config count up -->
+    <script src="../Counting-Up-To-Numerical-Values-On-Scroll-jQuery-Countup-js/jquery.countup.js"></script>
+    <script>
+      $(".counter").countUp();
+    </script>
