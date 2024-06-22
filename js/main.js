@@ -50,22 +50,110 @@ domID('buy__option').onclick = function () {
     div.style.transform = `rotate(${deg}deg)`;
     rotated = !rotated;
 };
+barToggle('.faq__title', 'div.col-1')
 // Toggle FAQ display and rotate arrow
+function barToggle(id1, id2){
+  $(document).ready(function(){
+    $(id1).click(function() {
+      var target = $(this).data("target");
+      var faqDetail = $(target);
+      var faAngleDown = $(this).find(id2);
+      // Toggle class active và điều khiển hiệu ứng xoay của icon
+      faqDetail.toggleClass("active__2");
+      faAngleDown.toggleClass("active__1");
+    });
+  })
+}
+function featureExchange(id) {
+  $(document).ready(function () {
+    // Function to handle click events
+    function handleClick(element) {
+      var target = $(element).data("target");
+      var featureDetail = $(target);
+      var featureAll = document.querySelectorAll('.feature__content');
+      var featureArrow = $(element).find('.feature__arrow');
+      var featureTitle = $(element).find('h3');
 
-    $(".faq__title").click(function() {
-        var target = $(this).data("target");
-        var faqDetail = $(target);
-        var faAngleDown = $(this).find("i.fa-angle-down");
-        var faAngleUp = $(this).find("i.fa-angle-up");
-    
-        faqDetail.slideToggle(100); // Hiệu ứng slideToggle cho đoạn văn bản
+      // Hide all button classes and feature contents
+      $('.feature__button').not(element).removeClass('ft__border');
+      $('.feature__arrow').not(featureArrow).removeClass('activeArrow');
+      $('.feature__h3').not(featureTitle).removeClass('h3__active');
+      $(featureAll).not(featureDetail).addClass('notHeight');
+      $(featureAll).not(featureDetail).removeClass('activeHeight');
+      $('.feature__title').not(featureTitle).removeClass('h3__active');
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        // Toggle class to this element
+        $(featureDetail).addClass('activeSmooth');
+        $(element).toggleClass('ft__border');
+        $(featureDetail).toggleClass('activeHeight');
+        $(featureArrow).toggleClass('activeArrow');
+        $(featureTitle).toggleClass('h3__active');
+      } else {
+        // Hide all feature contents
+        $(featureAll).not(featureDetail).addClass('notForshow');
+        // Remove display none to element
+        $(featureAll).removeClass('notForshow');
+        $(featureAll).removeClass('activeSmooth')
+        // Add class to this element
+        $(featureDetail).addClass('activeHeight');
+        $(featureArrow).addClass('activeArrow');
+        $(featureTitle).addClass('h3__active');
+        $(element).addClass('ft__border');
+      }
+      // Save the state to localStorage
+      localStorage.setItem('activeFeature', target);
+    }
+
+    // Handle click event for buttons
+    $(id).click(function () {
+      handleClick(this);
+    });
+
+    // Restore the state from localStorage when the page is loaded
+    var activeFeature = localStorage.getItem('activeFeature');
+    if (activeFeature) {
+      var activeButton = $('[data-target="' + activeFeature + '"]');
+      if (activeButton.length) {
+        handleClick(activeButton[0]);
+      }
+    }
+
+    // Function to get element by ID
+    const parent1 = domID('card__1');
+    const parent2 = domID('card__2');
+    const parent3 = domID('card__3');
+    const child1 = document.querySelectorAll('.feature__button')[1];
+    const child2 = document.querySelectorAll('.feature__button')[2];
+
+    // Store the initial state
+    const storeChildren1 = [...parent1.children];
+    const storeChildren2 = [...parent2.children];
+    const storeChildren3 = [...parent3.children];
+
+    function moveChildElement() {
+      if (window.innerWidth > 768) {
+        parent1.appendChild(child1);
+        parent1.appendChild(child2);
+        parent1.classList.add('activeFlex')
+        parent2.classList.add('notForshow');
+        parent3.classList.add('notForshow');
         
-        // Toggle class active và điều khiển hiệu ứng xoay của icon
-        faqDetail.toggleClass("active__1");
-        faAngleDown.toggleClass("hidden");
-        faAngleUp.toggleClass("hidden");
-      });
+      } else {
+        // Restore the initial state
+        storeChildren1.forEach(child => parent1.appendChild(child));
+        storeChildren2.forEach(child => parent2.appendChild(child));
+        storeChildren3.forEach(child => parent3.appendChild(child));
+        parent2.classList.remove('notForshow');
+        parent3.classList.remove('notForshow');
+      }
+    }
 
+    moveChildElement();
+    window.addEventListener('resize', moveChildElement);
+  });
+}
+
+featureExchange('.feature__button');
   // Adjust navbar height on scroll
 function adjustNavbar() {
     const header = domID('header__fixed');
@@ -77,28 +165,37 @@ function adjustNavbar() {
 }
 window.onscroll = adjustNavbar;
 //prevent user from clicking button before the end of navbar toggle effect
-document.addEventListener('DOMContentLoaded', function () {
-    var navbarToggler = document.getElementById('navbar-toggler');
-    var navbarCollapse = document.getElementById('navbarNavDropdown');
-    var isAnimating = false;
+multipleShow('#navbar-toggler', '#navbarNavDropdown')
 
-    navbarToggler.addEventListener('click', function () {
-      if (isAnimating) return;
-      isAnimating = true;
+function multipleShow(togglerClass, collapseClass){
+  document.addEventListener('DOMContentLoaded', function () {
+    var navbarTogglers = document.querySelectorAll(togglerClass);
+    var navbarCollapses = document.querySelectorAll(collapseClass);
+    
+    navbarTogglers.forEach(function(navbarToggler, index) {
+      var navbarCollapse = navbarCollapses[index];
+      var isAnimating = false;
 
-      setTimeout(function () {
-        isAnimating = false;
-      }, 300); // Duration of the collapse animation in ms
+      navbarToggler.addEventListener('click', function () {
+        if (isAnimating) return;
+        isAnimating = true;
 
-      // Toggle button states
-      var isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
-      navbarToggler.disabled = true;
-      
-      navbarCollapse.addEventListener('transitionend', function () {
-        navbarToggler.disabled = false;
-      }, { once: true });
+        setTimeout(function () {
+          isAnimating = false;
+        }, 300); // Duration of the collapse animation in ms
+
+        // Toggle button states
+        var isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+        navbarToggler.disabled = true;
+
+        navbarCollapse.addEventListener('transitionend', function () {
+          navbarToggler.disabled = false;
+        }, { once: true });
+      });
     });
   });
+}
+
 // Theme switching
 const toggleSwitch = select('.theme-switch input[type="checkbox"]');
 const moon = domID('moon');
@@ -200,7 +297,6 @@ $(document).ready(function() {
     var offcanvasElement = document.getElementById('offcanvasRight');
     var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
     offcanvas.show();
-    offcanvasElement.style.transition='none';
   });
   
   

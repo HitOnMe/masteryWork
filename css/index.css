@@ -25,6 +25,7 @@
     margin: 0;
     padding: 0;
 }
+
 .row>*{
     padding-left: 0;
     padding-right: 0
@@ -45,15 +46,15 @@ h1 {
 }
 
 h2 {
-    font-size: 2.9rem;
-    line-height: 1;
+    font-size: 2.2rem;
+    line-height: 2.5rem;
+    font-weight: 700
 }
 
 h3 {
     font-size: 1rem;
     line-height: 1rem;
     color: #dc4f72;
-    text-transform: uppercase;
     margin-bottom: 5px;
 }
 
@@ -72,8 +73,9 @@ a {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
     border-radius: var(--card-curve);
+    height: auto;
 }
 
 .specific__2, .mwIntro, .mwNumber, .faq, footer, footer h3 a {
@@ -119,13 +121,31 @@ p, a, i, p.card-text {
     opacity: 1;
 }
 
+.notForshow{
+    display:none
+}
+.activeShow{
+    display: block
+}
+.notHeight{
+    max-height:0
+}
+.minHeight{
+    min-height: 400px
+}
+.activeSmooth {
+    transition: all .3s ease-in-out
+}
+.activeFlex{
+    display:flex
+}
 input .checkbox {
     display: inline-block;
 }
 
 .mwTitle {
     max-width: 750px;
-    margin: 50px auto 0;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -136,16 +156,13 @@ input .checkbox {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding-top: 48px;
+    padding-left: 1rem;
+    width: 100%
 }
 
 .container-2 {
     max-width: 750px;
     margin: auto;
-}
-
-.container-fluid {
-    padding: 100px 0 50px 0;
 }
 
 .button__1, .button__2, .button__3 {
@@ -337,16 +354,19 @@ header .nav-link::after{
 .anchor__bg {
     background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/banner.jpg");
 }
-
+.anchor__img{
+    max-width: 450px
+}
 .mwAnchor p {
     font-size: 1.3rem;
     font-weight: 400;
     margin: 16px 0 48px;
+    max-width: 450px
 }
 
 .mwAnchor .container {
     align-items: center;
-    padding: 0;
+    padding-top: 5rem
 }
 
 .mwCarousel {
@@ -370,7 +390,7 @@ header .nav-link::after{
 }
 
 .Carousel__content {
-    width: 47%;
+    max-width: 550px
 }
 
 .Carousel__content h2, .feature__content h2 {
@@ -451,8 +471,9 @@ header .nav-link::after{
 }
 .specific__2 h3 {
     margin: 16px 0;
- 
-    font-weight: 700
+    font-size:1.6rem;
+    font-weight: 700;
+    line-height: 35px;
 }
 .specific__2{
     padding: 48px 32px;
@@ -462,22 +483,15 @@ header .nav-link::after{
     transform: translateY(-10px);
     box-shadow: 1px 5px 7.5px #cccdce;
 }
-
-.intro__content p {
-    padding-right: 48px
+.intro__content{
+    padding-right: 3rem
 }
-.intro__content h2{
-    padding-right: 15px
-}
-.intro__img {
-    display: flex;
-    justify-content: center;
-    padding: 0 0 0 48px
+.intro__img{
+    padding-left: 3rem
 }
 
 .mwIntro img, .faq img, .mwFeature img{
-    border-radius: var(--card-curve);
-    object-fit:cover;
+    object-fit:contain;
     box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transition: all .5s
 }
@@ -504,13 +518,12 @@ header .nav-link::after{
 .number__content span{
     font-weight: 700
 }
-.faq .row{
-    padding-left: 23px
-}
+
 .faq button{    
     border:none;
     cursor: pointer;
     width: 100%;
+    align-items:center;
 }
 .faq ul{
     list-style:none
@@ -518,34 +531,54 @@ header .nav-link::after{
 .faq__content li{
     font-size: 1rem;
     background-color: var(--bg-color);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 1px solid #e7eaecc4 ;
     position: relative;
-    line-height: 70px;
-    padding-left: 10px;
+    padding: 25px 0 25px 20px;
     border-radius: var(--card-curve);
     overflow:hidden
 }
-
-.faq button i{
-    position:absolute;
-    right: 0;
-    top: 30px;
+.faq button>div{
+    position: relative;
     transition: all .3s ease-in-out
 }
+.faq button>div::before, .faq button>div::after{
+    content:'';
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 9px;
+    right: 50%;
+    background-color:var(--text-color)
+}
+.faq button>div::before{
+    transform: translateX(2px) rotate(45deg);
+    transition: all .3s ease-in-out
+}
+.faq button>div:after{
+    transform: translateX(-2px) rotate(-45deg);
+    transition: all .3s ease-in-out
+}
+.faq button>div.active__1::before{
+    transform: translateX(-2px) rotate(45deg)
+}
+.faq button>div.active__1::after{
+    transform:  translateX(2px) rotate(-45deg)
+}
 .faq__detail{
-    padding: 0 15px;
-    line-height: 20px;
+    padding-right: 20px;
+    line-height: 24.5px;
     margin:0;
-    display:none;
-    transform:translateY(30px);
-    transition: transform .3s ease-in-out, max-height .3s ease-in-out
+    max-height: 0;
+    transform: translateY(30px);
+    transition: all .3s ease-in-out;
+    opacity: 0;
 }
 
 .faq h4{
     font-size: 1.2rem;
     text-align:left;
-    line-height: 70px
+    margin-bottom: 0
 }
 .faq__title{
     width: 60%;
@@ -553,25 +586,15 @@ header .nav-link::after{
 }
 .faq img{
     position: sticky;
-    top: 20px
-}
-.faq__content{
-    padding: 0 15px 0 48px
+    top: 20px;
+    will-change: transform;
 }
 
-.active__1{
-    max-height: 800px;
-    transform: translateY(0)
+.active__2{
+    opacity:1;
+    max-height: 1000px;
+    transform: translateY(8px)
 }
-
-.rotate {
-    
-    transition: all 0.3s ease-in-out; 
-}
-.hidden{
-    display: none
-}
-
 .mwFeature ul.nav-pills {
     justify-content:center
 }
@@ -619,6 +642,60 @@ header .nav-link::after{
 .mwFeedback button.owl-dot{
     color: red;
 }
+.mwFeature .card{
+    overflow: hidden;
+}
+.mwFeature button{
+    background-color: var(--secondary-color);
+}
+.mwFeature h3{
+    color: var(--font-color)
+}
+.h3__active{
+    color:#dc4f72!important;
+}
+.ft__border{
+    border-bottom: 3px solid #dc4f72
+}
+.feature__button{
+    width: 100%
+}
+.feature__arrow{
+    border:none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid #c1c1c1;
+}
+.activeArrow{
+    border:none;
+    border-bottom: 12px solid #c1c1c1;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+.feature__content{
+    margin: 20px 0;
+    margin: 0 auto;
+    transform: translateY(0);
+    overflow: hidden;
+}
+.feature__content.activeHeight{
+    max-height: 800px;
+    transform: translateY(30px)
+}
+.mwFeadback {
+    position: relative;
+    background: linear-gradient(to right,var(--bg-color) 1%, var(--primary-color));
+}
+.feedback__bg{
+    background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b2.jpg")
+}
+.mwFeedback__img {
+    width: 10%;
+}
+
+.mwFeedback button.owl-dot{
+    color: red;
+}
 .foot__form {
     background-color: white;
     padding: 32px;
@@ -633,7 +710,9 @@ header .nav-link::after{
     border:none;
     width: 78%
 }
-
+footer{
+    padding: 3rem 0
+}
 footer h3 a{
     text-transform:capitalize
 }
@@ -694,7 +773,7 @@ footer .row{
     grid-template-rows: repeat(4, 1fr);
     text-align:center;
     font-size: 1rem;
-    
+    z-index: auto
 }
 .offcanvas.offcanvas-end a{
     color:#9d9d9e;
@@ -749,10 +828,20 @@ button.buy__action i, .offcanvas i{
   #close-popup span{
     color:#cccdce;
     cursor: pointer;
-    transition: all .5s
+    transition: all .5s;
+    font-size: 1.5rem
   }
  #close-popup span:hover{
     color:white
+ }
+ #popup-content .form-group{
+    width: 100%;
+    padding: 15px
+ }
+ 
+ #popup-content form{
+   max-width: 600px;
+   padding: 0
  }
   #popup-content input{
      background-color: var(--secondary-color);
@@ -780,9 +869,7 @@ button.buy__action i, .offcanvas i{
     border-radius: 0 6px 6px 0;
     padding: 0 28px
   }
-  .input-group{
-    position: relative
-  }
+ 
   #popup-content .form-control-clear {
     position: absolute;
     right: 20%;
@@ -790,6 +877,8 @@ button.buy__action i, .offcanvas i{
     cursor:pointer;
     display: none
 }
+
+
 @media screen and (max-width: 992.12px) {
     header .container {
         line-height: 10px;
@@ -801,7 +890,6 @@ button.buy__action i, .offcanvas i{
     .header__fix{
         padding: 15px 0;
         height: auto;
-        z-index: 9999
     }
     .navbar__fixed{
         padding: 10px 0;
@@ -834,11 +922,98 @@ button.buy__action i, .offcanvas i{
         opacity: 0
     }
 } 
-
-@media screen and (min-width: 567.98px){
+@media screen and (max-width: 800px){
+    .specific h1, .faq h1{
+        font-size: 2.5rem;
+        line-height: 3.1rem
+    }
+    .Carousel__content button{
+        margin-top: 40px
+    }
+}
+@media screen and (max-width: 767.98px){
+    .button__1{
+        line-height: 2.8rem;
+        padding: 0 20px
+    }
+    .intro__img{
+        padding: 0 1rem
+    }
+    .button__2{
+        line-height: 44px;
+        padding: 0 20px
+    }
+    .intro__content{
+        padding-right: 1rem
+    }
+    .button__1, .button__2, .button__3{
+        line-height: 44px;
+        padding: 0 20px
+    }
+    .Carousel__content p{
+        margin-bottom: 1.5rem
+}}
+@media screen and (max-width: 667px){
+    .Carousel__content p{
+        font-size: 1rem;
+        line-height: 22px
+}
+    .Carousel__content button{
+        margin-top: 30px
+    }
+}
+@media screen and (max-width: 577.98px){
+    .container {
+        padding-left: 15px
+    }
+    .mwAnchor h1{
+        font-size:2.7rem;
+        line-height: 3rem
+    }
+    #popup-content .container{
+        padding: unset
+    }
+     #popup-content .input-group{
+        display: block
+     }
+     #popup-content input, #popup-content button{
+        width: 100%;
+        border-radius: var(--card-curve);
+        margin-top: 5px
+     }
+     .intro__img.col-sm-6, .col-lg-4{
+        padding: 0
+    }
+}   
+@media screen and (max-width: 667px){
+    .specific h1, .faq h1{
+        font-size: 2rem;
+        line-height: 2.6rem
+    }
+}
+@media screen and (max-width: 439.98px){
+    .Carousel__content h2{
+        font-size: 1.6rem
+    }
+}
+@media screen and (max-width: 374.98px){
+    .mwAnchor h1{
+        font-size: 2.2rem
+    }   
+    .Carousel__content button{
+        margin-top: 25px
+    }
+}
+@media screen and (min-width: 568.98px){
     .container.row, header .container{
         padding-left: 25px;
         padding-right: 25px
     }
-    
+    .container{
+        padding-right: 30px;
+        padding-left: 30px
+    }
 }
+@media screen and (min-width:767.98px){
+    
+    }
