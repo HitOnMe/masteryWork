@@ -147,7 +147,7 @@ function featureExchange(id) {
         parent3.classList.add('notForshow');
         babyChild.forEach(function (baby) {
           baby.style.textAlign = 'center';
-          baby.style.borderBottom = 'none';
+          baby.style.borderBottom = '3px solid #cfcccc';
         });
         beautyCard.forEach(function (card) {
           card.style.outline = 'none';

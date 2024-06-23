@@ -2,7 +2,7 @@
 :root {
     --primary-color: rgba(255, 255, 255, 0.9);
     --secondary-color: #f7f9fc;
-    --text-color: #5a5a5a;
+    --text-color: #4e4d4d;
     --font-color: #2C3038;
     --bg-color: #fff;
     --heading-color: black;
@@ -176,7 +176,12 @@ input .checkbox {
     background-color: #dc4f72;
     color: white;
 }
-
+.button__2:focus, .navbar-toggler:focus{
+    color:#fff;
+    background-color:#d62f58;
+    border-color:#cf2952;
+    box-shadow:0 0 0 0.2rem rgba(225, 105, 135, 0.5)
+}
 .bg__fixed {
     position: absolute;
     width: 100%;
@@ -251,10 +256,6 @@ header .mw__nav.dropdown i {
     width: 36px;
     height: 36px;
     background-color: #dc4f72;
-}
-.navbar-toggler:focus {
-    box-shadow:0px 0px 6px 0rem;
-    border: 1px solid #dc4f72
 }
 .fa.fa-bars {
     width: 24px;
@@ -650,7 +651,7 @@ header .nav-link::after{
     font-size: 1.4rem;
     padding: 1rem;
     margin: 0;
-    color: var(--font-color)
+    color: var(--font-color);
 }
 .h3__active{
     color:#dc4f72!important;
@@ -698,10 +699,7 @@ header .nav-link::after{
     padding-right: 15px;
     padding-left: 15px;
 }
-.feature__card h3{
-    font-size: 1.3rem;
-    font-weight: 600;
-}
+
 .mwFeadback {
     position: relative;
     background: linear-gradient(to right,var(--bg-color) 1%, var(--primary-color));
