@@ -42,6 +42,7 @@ $('.owl-carousel').owlCarousel({
         }
     }
 })
+
 // Rotate arrow on click
 let rotated = false;
 domID('buy__option').onclick = function () {
@@ -50,38 +51,39 @@ domID('buy__option').onclick = function () {
     div.style.transform = `rotate(${deg}deg)`;
     rotated = !rotated;
 };
-barToggle('.faq__title', 'div.col-1')
+
 // Toggle FAQ display and rotate arrow
-function barToggle(id1, id2){
-  $(document).ready(function(){
-    $(id1).click(function() {
-      var target = $(this).data("target");
-      var faqDetail = $(target);
-      var faAngleDown = $(this).find(id2);
-      // Toggle class active và điều khiển hiệu ứng xoay của icon
-      faqDetail.toggleClass("active__2");
-      faAngleDown.toggleClass("active__1");
-    });
-  })
-}
+
+$(document).ready(function(){
+  $('.faq__group').click(function() {
+    var target = $(this).data("target");
+    var faqDetail = $(target);
+    var faAngleDown = $(this).find('i.col-1');
+    // Toggle class active và điều khiển hiệu ứng xoay của icon
+    faqDetail.toggleClass("active__2");
+    faAngleDown.toggleClass("active__1");
+  });
+})
+
 function featureExchange(id) {
   $(document).ready(function () {
     // Function to handle click events
     function handleClick(element) {
       var target = $(element).data("target");
       var featureDetail = $(target);
-      var featureAll = document.querySelectorAll('.feature__content');
       var featureArrow = $(element).find('.feature__arrow');
       var featureTitle = $(element).find('h3');
+      var featureAll = document.querySelectorAll('.feature__content');
 
       // Hide all button classes and feature contents
+      $(featureAll).not(featureDetail).addClass('notForshow');
       $('.feature__button').not(element).removeClass('ft__border');
       $('.feature__arrow').not(featureArrow).removeClass('activeArrow');
       $('.feature__h3').not(featureTitle).removeClass('h3__active');
-      $(featureAll).not(featureDetail).addClass('notHeight');
       $(featureAll).not(featureDetail).removeClass('activeHeight');
       $('.feature__title').not(featureTitle).removeClass('h3__active');
-      if (window.matchMedia('(max-width: 768px)').matches) {
+
+      if (window.matchMedia('(max-width: 767.98px)').matches) {
         // Toggle class to this element
         $(featureDetail).addClass('activeSmooth');
         $(element).toggleClass('ft__border');
@@ -90,14 +92,13 @@ function featureExchange(id) {
         $(featureTitle).toggleClass('h3__active');
       } else {
         // Hide all feature contents
-        $(featureAll).not(featureDetail).addClass('notForshow');
+        $(featureDetail).removeClass('notForshow');
         // Remove display none to element
-        $(featureAll).removeClass('notForshow');
-        $(featureAll).removeClass('activeSmooth')
+        $(featureAll).removeClass('activeSmooth');
         // Add class to this element
         $(featureDetail).addClass('activeHeight');
-        $(featureArrow).addClass('activeArrow');
         $(featureTitle).addClass('h3__active');
+        $('.feature__arrow').addClass('notForshow');
         $(element).addClass('ft__border');
       }
       // Save the state to localStorage
@@ -119,11 +120,18 @@ function featureExchange(id) {
     }
 
     // Function to get element by ID
+    function domID(id) {
+      return document.getElementById(id);
+    }
+
     const parent1 = domID('card__1');
     const parent2 = domID('card__2');
     const parent3 = domID('card__3');
-    const child1 = document.querySelectorAll('.feature__button')[1];
-    const child2 = document.querySelectorAll('.feature__button')[2];
+    const featureArrow = document.querySelectorAll('.feature__arrow');
+    const babyChild = document.querySelectorAll('.feature__button');
+    const beautyCard = document.querySelectorAll('.feature__card');
+    const child1 = babyChild[1];
+    const child2 = babyChild[2];
 
     // Store the initial state
     const storeChildren1 = [...parent1.children];
@@ -131,13 +139,20 @@ function featureExchange(id) {
     const storeChildren3 = [...parent3.children];
 
     function moveChildElement() {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 767.98) {
         parent1.appendChild(child1);
         parent1.appendChild(child2);
-        parent1.classList.add('activeFlex')
+        parent1.classList.add('activeFlex');
         parent2.classList.add('notForshow');
         parent3.classList.add('notForshow');
-        
+        babyChild.forEach(function (baby) {
+          baby.style.textAlign = 'center';
+          baby.style.borderBottom = 'none';
+        });
+        beautyCard.forEach(function (card) {
+          card.style.outline = 'none';
+        });
+        $(featureArrow).addClass('notForshow');
       } else {
         // Restore the initial state
         storeChildren1.forEach(child => parent1.appendChild(child));
@@ -145,12 +160,26 @@ function featureExchange(id) {
         storeChildren3.forEach(child => parent3.appendChild(child));
         parent2.classList.remove('notForshow');
         parent3.classList.remove('notForshow');
+        babyChild.forEach(function (baby) {
+          baby.style.textAlign = 'left';
+          baby.style.borderBottom = '1px solid var(--font-color)';
+        });
+        beautyCard.forEach(function (card) {
+          card.style.outline = '1px solid var(--font-color)';
+        });
+        $(featureArrow).removeClass('notForshow');
       }
     }
 
     moveChildElement();
     window.addEventListener('resize', moveChildElement);
   });
+}
+function handleResize() {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    moveChildElement(); // Gọi lại hàm xử lý khi kích thước đã ổn định
+  }, 200); // Thời gian chờ sau khi resize để gọi lại hàm, ví dụ 200ms
 }
 
 featureExchange('.feature__button');

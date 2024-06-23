@@ -82,7 +82,7 @@ img {
     background-color: var(--secondary-color);
 }
 
-header, .specific, .specific__2:hover, .faq li, .mwFeature, .row.card-body, .mwAction, .header__fix, .faq button  {
+header, .specific, .specific__2:hover, .faq li, .mwFeature, .row.card-body, .mwAction, .header__fix, .faq input  {
     background-color: var(--bg-color);
 }
 
@@ -134,23 +134,16 @@ p, a, i, p.card-text {
     min-height: 400px
 }
 .activeSmooth {
-    transition: all .3s ease-in-out
+    transition: all .5s ease-in-out
 }
 .activeFlex{
-    display:flex
+    display:flex;
+}
+.notBorder{
+    border:none
 }
 input .checkbox {
     display: inline-block;
-}
-
-.mwTitle {
-    max-width: 750px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.mwTitle button {
-    margin: 8px;
 }
 
 .container {
@@ -162,7 +155,7 @@ input .checkbox {
 
 .container-2 {
     max-width: 750px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .button__1, .button__2, .button__3 {
@@ -453,11 +446,7 @@ header .nav-link::after{
 }
 .card-title {
     color:#dc4f72;
-    padding-top: 20px;
     margin-bottom: 0
-}
-.card.item{
-    border:none
 }
 
 .specific img{
@@ -519,50 +508,58 @@ header .nav-link::after{
     font-weight: 700
 }
 
-.faq button{    
-    border:none;
-    cursor: pointer;
-    width: 100%;
-    align-items:center;
-}
+
 .faq ul{
     list-style:none
 }
 .faq__content li{
+    position: relative;
     font-size: 1rem;
     background-color: var(--bg-color);
     margin-bottom: 15px;
     border: 1px solid #e7eaecc4 ;
-    position: relative;
     padding: 25px 0 25px 20px;
     border-radius: var(--card-curve);
+    transition: all .3s ease-in-out;
     overflow:hidden
 }
-.faq button>div{
-    position: relative;
+.faq input[type=checkbox]{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    appearance: none;
+    opacity: 0;
     transition: all .3s ease-in-out
 }
-.faq button>div::before, .faq button>div::after{
+.faq li i{
+    position: relative
+}
+.faq li i::before, .faq li i::after{
     content:'';
     position: absolute;
     display: block;
+    top: 50%;
+    right: 50%;
     width: 3px;
     height: 9px;
-    right: 50%;
-    background-color:var(--text-color)
+    
+    background-color:var(--font-color);
 }
-.faq button>div::before{
+.faq li i::before{
     transform: translateX(2px) rotate(45deg);
     transition: all .3s ease-in-out
 }
-.faq button>div:after{
+.faq li i::after{
     transform: translateX(-2px) rotate(-45deg);
     transition: all .3s ease-in-out
 }
-.faq button>div.active__1::before{
+.faq li i.active__1::before{
     transform: translateX(-2px) rotate(45deg)
 }
-.faq button>div.active__1::after{
+.faq li i.active__1::after{
     transform:  translateX(2px) rotate(-45deg)
 }
 .faq__detail{
@@ -615,6 +612,9 @@ header .nav-link::after{
     color:#dc4f72;
     border-color:#dc4f72
 }
+.feature__card{
+    outline: 1px solid var(--font-color)
+}
 
 .mwFeature .tab-content>.active{
     display: flex;
@@ -628,13 +628,7 @@ header .nav-link::after{
 .mwFeature .container{
     max-width: 996px
 }
-.mwFeadback {
-    position: relative;
-    background: linear-gradient(to right,var(--bg-color) 1%, var(--primary-color));
-}
-.feedback__bg{
-    background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b2.jpg")
-}
+
 .mwFeedback__img {
     width: 10%;
 }
@@ -645,22 +639,31 @@ header .nav-link::after{
 .mwFeature .card{
     overflow: hidden;
 }
-.mwFeature button{
-    background-color: var(--secondary-color);
-}
-.mwFeature h3{
+.feature__card h3{
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 1rem;
+    margin: 0;
     color: var(--font-color)
 }
 .h3__active{
     color:#dc4f72!important;
 }
-.ft__border{
-    border-bottom: 3px solid #dc4f72
+.feature__button.ft__border{
+    border-bottom: 3px solid #dc4f72!important;
+}
+
+.button__contain{
+    position: relative
 }
 .feature__button{
-    width: 100%
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 0;
+    transition: unset
 }
 .feature__arrow{
+    float:right;
     border:none;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -673,14 +676,25 @@ header .nav-link::after{
     border-right: 6px solid transparent;
 }
 .feature__content{
-    margin: 20px 0;
+    max-height:0;
+    padding: 0;
     margin: 0 auto;
     transform: translateY(0);
     overflow: hidden;
 }
 .feature__content.activeHeight{
+    padding: 20px 0 50px;
+    margin: 20px auto;
     max-height: 800px;
-    transform: translateY(30px)
+    transform: translateY(20px)
+}
+.feature__content .col-md-6{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.feature__card h3{
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 .mwFeadback {
     position: relative;
@@ -689,27 +703,7 @@ header .nav-link::after{
 .feedback__bg{
     background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b2.jpg")
 }
-.mwFeedback__img {
-    width: 10%;
-}
 
-.mwFeedback button.owl-dot{
-    color: red;
-}
-.foot__form {
-    background-color: white;
-    padding: 32px;
-    box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
-    border-radius: var(--card-curve)
-}
-.foot__email {
-    background-color: #f7f9fc;
-    border-radius: var(--card-curve);
-    padding: 12px 20px;
-    outline:none;
-    border:none;
-    width: 78%
-}
 footer{
     padding: 3rem 0
 }
@@ -725,9 +719,21 @@ footer button{
 footer .row{
     justify-content: space-between;
 }
+.foot__email {
+    background-color: #f7f9fc;
+    border-radius: var(--card-curve);
+    padding: 12px 20px;
+    outline:none;
+    border:none;
+    width: 78%
+}
 .footer__form{
     margin-bottom: 0;
     padding: 0 15px 0 48px;
+    background-color: white;
+    padding: 32px;
+    box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
+    border-radius: var(--card-curve)
 }
 .foot__form{
     background-color: var(--bg-color)
@@ -737,6 +743,9 @@ footer .row{
     padding-top: 24px;
     margin-top: 48px
 }
+.copy__right a{
+    padding: 0 10px;
+}
 .copy__right::before{
     content:'';
     position: absolute;
@@ -745,10 +754,6 @@ footer .row{
     width: 100%;
     border: 1px solid #e7eaec85;
 }
-.copy__right a{
-    padding: 0 10px;
-}
-
 .social span{
     color:black;
     font-weight: bold
@@ -921,7 +926,12 @@ button.buy__action i, .offcanvas i{
     .mw__nav .fa.fa-angle-down{
         opacity: 0
     }
-} 
+    .mwFeature h2{
+        margin-bottom:14px;
+        font-size: 1.6rem;
+        line-height: 2rem
+    }
+}   
 @media screen and (max-width: 800px){
     .specific h1, .faq h1{
         font-size: 2.5rem;
@@ -952,7 +962,14 @@ button.buy__action i, .offcanvas i{
     }
     .Carousel__content p{
         margin-bottom: 1.5rem
-}}
+    }   
+    .feature__content .col-md-6{
+        padding:0
+    }
+    .feature__content .col-md-6:last-child{
+        margin-top: 48px;
+    }
+}
 @media screen and (max-width: 667px){
     .Carousel__content p{
         font-size: 1rem;
@@ -989,6 +1006,15 @@ button.buy__action i, .offcanvas i{
     .specific h1, .faq h1{
         font-size: 2rem;
         line-height: 2.6rem
+    }
+}
+@media screen and (max-width: 480px){
+    .mwFeature h2{
+        font-size: 1.5rem;
+        line-height: 30px
+    }
+    .feature__content.activeHeight{
+        margin: 0
     }
 }
 @media screen and (max-width: 439.98px){
