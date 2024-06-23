@@ -104,21 +104,20 @@ p, a, i, p.card-text {
 
 .theme-switch-wrapper i {
     color: #131617;
+    transition: none
 }
+
 
 .theme-switch-wrapper .sun, .theme-switch-wrapper .moon {
-    position: absolute;
-    top: 24px;
-    right: 30px;
+    display: none
 }
-
-.theme-switch-wrapper .sun {
-    color: white;
-    opacity: 0;
+.theme-switch-wrapper .sun.activeShow{
+    display: block;
+    color: white
 }
-
-.theme-switch-wrapper .sun.active {
-    opacity: 1;
+.theme-switch-wrapper .moon.activeShow{
+    display: block;
+    color: black
 }
 
 .notForshow{
@@ -237,7 +236,7 @@ header li {
 header .container {
     background-color: var(--bg-color);
     line-height: 50px;
-    padding: 0 12px;
+    padding: 0 15px;
     position: relative;
     transition: all .5s
 }
@@ -316,6 +315,13 @@ header .nav-link::after,.dropdown-item::after {
 header .nav-link::after{
     left: 8px;
     bottom: 30%;
+}
+.header__symbol {
+    position: absolute;
+    width:24px;
+    height:24px;
+    right: 25px;
+    top: 22px;
 }
 .dropdown-item::after{
     left: 15px;
@@ -888,6 +894,10 @@ button.buy__action i, .offcanvas i{
     header .container {
         line-height: 10px;
     }
+    .header__symbol{
+        right: 70px;
+        top: 10px
+    }
     .semi__header{
         padding: 33px 0;
         height: auto
@@ -907,12 +917,7 @@ button.buy__action i, .offcanvas i{
         padding-top: 20px;
         padding-bottom:20px
     }
-    .theme-switch-wrapper .moon,.theme-switch-wrapper .sun {
-        position: absolute;
-        right: 3em;
-        top: 0.3em;
-        transition: none
-    }
+    
     .nav-link::after{
         left: 0;
         bottom: 0
@@ -982,6 +987,9 @@ button.buy__action i, .offcanvas i{
 @media screen and (max-width: 577.98px){
     .container {
         padding-left: 15px
+    }
+    .header__symbol{
+        right: 60px
     }
     .mwAnchor h1{
         font-size:2.7rem;

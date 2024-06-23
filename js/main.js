@@ -234,8 +234,8 @@ function switchTheme(e) {
     const isDark = e.target.checked;
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    moon.classList.toggle('active', !isDark);
-    sun.classList.toggle('active', isDark);
+    moon.classList.toggle('activeShow', !isDark);
+    sun.classList.toggle('activeShow', isDark);
 }
 
 const currentTheme = localStorage.getItem('theme');
@@ -243,7 +243,8 @@ if (currentTheme) {
     const isDark = currentTheme === 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     toggleSwitch.checked = isDark;
-    sun.classList.toggle('active', isDark);
+    sun.classList.toggle('activeShow', isDark);
+    moon.classList.toggle('activeShow', !isDark);
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
