@@ -34,10 +34,10 @@ $('.owl-carousel').owlCarousel({
     margin:10,
     nav:true,
     responsive:{
-        767.98:{
+        0:{
             items:1
         },
-        1499.98:{
+        991.98:{
             items:2
         }
     }

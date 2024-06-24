@@ -144,7 +144,10 @@ p, a, i, p.card-text {
 input .checkbox {
     display: inline-block;
 }
-
+.mwFeadback .owl-theme .owl-dots .owl-dot span{
+    background-color: var(--bg-color);
+    visibility:visible
+}
 .container {
     max-width: 1200px;
     margin: auto;
@@ -171,10 +174,15 @@ input .checkbox {
     border: 1px solid #dc4f72;
     border-radius: var(--card-curve);
 }
-
+.button__1:focus{
+    box-shadow:0 0 0 0.2rem rgba(220, 79, 114, 0.5)
+}
 .button__1:hover {
     background-color: #dc4f72;
     color: white;
+}
+.button__2 {
+    background-color:#dc4f72
 }
 .button__3:focus{
     color: #212529;
@@ -520,8 +528,6 @@ header .nav-link::after{
 .number__content span{
     font-weight: 700
 }
-
-
 .faq ul{
     list-style:none
 }
@@ -713,15 +719,23 @@ header .nav-link::after{
 .feedback__bg{
     background-image: url("https://wp.w3layouts.com/masterwork/wp-content/themes/masterwork/assets/images/b2.jpg")
 }
-
+.mwFeadback .card{
+    border: none
+}
 footer{
     padding: 3rem 0
+}
+footer p{
+    margin: 10px 0
 }
 footer h3 a{
     text-transform:capitalize
 }
 footer h3{
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700
 }
 footer button{
     width: 20%
@@ -729,24 +743,37 @@ footer button{
 footer .row{
     justify-content: space-between;
 }
+footer h4{
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--font-color);
+    margin-bottom: 30px;
+    font-weight: 500
+}
 .foot__email {
-    background-color: #f7f9fc;
+    background-color: var(--bg-color);
     border-radius: var(--card-curve);
     padding: 12px 20px;
     outline:none;
     border:none;
-    width: 78%
+    width: 78%;
 }
 .footer__form{
     margin-bottom: 0;
     padding: 0 15px 0 48px;
-    background-color: white;
+   
     padding: 32px;
     box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
     border-radius: var(--card-curve)
 }
 .foot__form{
-    background-color: var(--bg-color)
+    background-color: var(--bg-color);
+    padding: 2em;
+    border-radius: var(--bg-color);
+    box-shadow:rgba(0, 0, 0, 0.15)
+}
+.foot__form input{
+    background-color: var(--secondary-color)
 }
 .copy__right{
     position: relative;
@@ -788,7 +815,7 @@ footer .row{
     grid-template-rows: repeat(4, 1fr);
     text-align:center;
     font-size: 1rem;
-    z-index: auto
+    z-index: 99
 }
 .offcanvas.offcanvas-end a{
     color:#9d9d9e;
@@ -894,7 +921,7 @@ button.buy__action i, .offcanvas i{
 }
 
 
-@media screen and (max-width: 992.12px) {
+@media screen and (max-width: 991.98px) {
     header .container {
         line-height: 10px;
     }
@@ -948,6 +975,9 @@ button.buy__action i, .offcanvas i{
     }
     .Carousel__content button{
         margin-top: 40px
+    }
+    footer h4 {
+        margin-bottom: 18px
     }
 }
 @media screen and (max-width: 767.98px){
@@ -1016,9 +1046,9 @@ button.buy__action i, .offcanvas i{
     }
 }   
 @media screen and (max-width: 667px){
-    .specific h1, .faq h1{
+    .specific h1, .faq h1, .mwAction h1{
         font-size: 2rem;
-        line-height: 2.6rem
+        line-height: 2.6rem;
     }
 }
 @media screen and (max-width: 480px){
