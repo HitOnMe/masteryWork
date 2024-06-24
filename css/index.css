@@ -761,16 +761,14 @@ footer h4{
 .footer__form{
     margin-bottom: 0;
     padding: 0 15px 0 48px;
-   
     padding: 32px;
-    box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
     border-radius: var(--card-curve)
 }
 .foot__form{
     background-color: var(--bg-color);
     padding: 2em;
     border-radius: var(--bg-color);
-    box-shadow:rgba(0, 0, 0, 0.15)
+    box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
 }
 .foot__form input{
     background-color: var(--secondary-color)
