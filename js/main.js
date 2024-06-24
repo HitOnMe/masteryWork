@@ -76,24 +76,24 @@ function featureExchange(id) {
       var featureAll = document.querySelectorAll('.feature__content');
 
       // Hide all button classes and feature contents
-      $(featureAll).not(featureDetail).addClass('notForshow');
       $('.feature__button').not(element).removeClass('ft__border');
       $('.feature__arrow').not(featureArrow).removeClass('activeArrow');
-      $('.feature__h3').not(featureTitle).removeClass('h3__active');
       $(featureAll).not(featureDetail).removeClass('activeHeight');
       $('.feature__title').not(featureTitle).removeClass('h3__active');
 
       if (window.matchMedia('(max-width: 767.98px)').matches) {
+        //Add transition to all alements
+        $(featureAll).addClass('activeSmooth');
         // Toggle class to this element
-        $(featureDetail).addClass('activeSmooth');
         $(element).toggleClass('ft__border');
         $(featureDetail).toggleClass('activeHeight');
         $(featureArrow).toggleClass('activeArrow');
         $(featureTitle).toggleClass('h3__active');
       } else {
-        // Hide all feature contents
+        // Only target feature can be shown
+        $(featureAll).not(featureDetail).addClass('notForshow');
         $(featureDetail).removeClass('notForshow');
-        // Remove display none to element
+        // Remove transition to all elements
         $(featureAll).removeClass('activeSmooth');
         // Add class to this element
         $(featureDetail).addClass('activeHeight');
@@ -118,18 +118,14 @@ function featureExchange(id) {
         handleClick(activeButton[0]);
       }
     }
-
-    // Function to get element by ID
-    function domID(id) {
-      return document.getElementById(id);
-    }
-
+    // function change elements properties in different window sizes
     const parent1 = domID('card__1');
     const parent2 = domID('card__2');
     const parent3 = domID('card__3');
     const featureArrow = document.querySelectorAll('.feature__arrow');
     const babyChild = document.querySelectorAll('.feature__button');
     const beautyCard = document.querySelectorAll('.feature__card');
+    const babyCard = document.querySelectorAll('.feature__content');
     const child1 = babyChild[1];
     const child2 = babyChild[2];
 
@@ -160,6 +156,9 @@ function featureExchange(id) {
         storeChildren3.forEach(child => parent3.appendChild(child));
         parent2.classList.remove('notForshow');
         parent3.classList.remove('notForshow');
+        babyCard.forEach(function(cardBaby){
+          cardBaby.classList.remove('notForshow')
+        })
         babyChild.forEach(function (baby) {
           baby.style.textAlign = 'left';
           baby.style.borderBottom = '1px solid var(--font-color)';

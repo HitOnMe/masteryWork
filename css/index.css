@@ -132,7 +132,7 @@ p, a, i, p.card-text {
 .minHeight{
     min-height: 400px
 }
-.activeSmooth {
+.feature__content.activeSmooth {
     transition: all .5s ease-in-out
 }
 .activeFlex{
@@ -175,6 +175,12 @@ input .checkbox {
 .button__1:hover {
     background-color: #dc4f72;
     color: white;
+}
+.button__3:focus{
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5)
 }
 .button__2:focus, .navbar-toggler:focus{
     color:#fff;
@@ -966,6 +972,7 @@ button.buy__action i, .offcanvas i{
     .Carousel__content p{
         margin-bottom: 1.5rem
     }   
+
     .feature__content .col-md-6{
         padding:0
     }
