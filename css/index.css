@@ -328,8 +328,8 @@ header .nav-link::after,.dropdown-item::after {
     transition: all 0.5s;
 }
 header .nav-link::after{
-    left: 0px;
-    bottom: 10%;
+    left: 10%;
+    bottom: 20%;
 }
 .header__symbol {
     position: absolute;
@@ -944,11 +944,11 @@ button.buy__action i, .offcanvas i{
         padding-top: 20px;
         padding-bottom:20px
     }
-    
-    .nav-link::after{
+    header .nav-link::after{
         left: 0;
-        bottom: 0
+        bottom: 10%
     }
+    
     .nav-link:hover::after{
         width: 20px
     }
